@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import type { AppMeta } from './types';
 import { categories, categoryBySlug } from './categories';
 
-export const SITE = process.env.SITE_URL ?? 'https://apps.pmcstudios.uk';
+export const SITE = process.env.SITE_URL ?? 'https://tools.pmcstudios.uk';
 /** The name in every tab title: the home page is "PMC Tools", every other page is "Page Name - PMC Tools". */
 export const SITE_NAME = 'PMC Tools';
 /** GitHub Pages serves every page as /name/, so canonical and sitemap URLs carry the slash there. */

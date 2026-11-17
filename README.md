@@ -1,4 +1,4 @@
-# PMC Apps (apps.pmcstudios.uk)
+# PMC Apps (tools.pmcstudios.uk)
 
 Sixty free browser tools in five groups. Next.js 15 (App Router), React 19, TypeScript.
 Everything runs in the visitor's browser. Signing in with a PMC ID and the three server-backed apps are optional.
@@ -27,9 +27,9 @@ npx serve out
 Full steps are in **DEPLOY.md**. In short:
 1. Make a repository on GitHub and push this folder to it (`git init`, `git add .`, `git commit -m "PMC Apps"`, `git remote add origin <your repo>`, `git push -u origin main`).
 2. In the repository: Settings > Pages > Source: **GitHub Actions**. The workflow in `.github/workflows/pages.yml` builds and publishes on every push.
-3. Add a DNS record at your domain host: type `CNAME`, name `apps`, value `<your-github-name>.github.io`. Then enter `apps.pmcstudios.uk` under Settings > Pages > Custom domain and tick Enforce HTTPS.
+3. Add a DNS record at your domain host: type `CNAME`, name `apps`, value `<your-github-name>.github.io`. Then enter `tools.pmcstudios.uk` under Settings > Pages > Custom domain and tick Enforce HTTPS.
 
-The site is built for **apps.pmcstudios.uk** (`public/CNAME` and `SITE_URL` in the workflow). If you want `app.` instead, change those two and the DNS name, and use one spelling everywhere.
+The site is built for **tools.pmcstudios.uk** (`public/CNAME` and `SITE_URL` in the workflow). If you want `app.` instead, change those two and the DNS name, and use one spelling everywhere.
 
 On GitHub Pages these are switched off because they need a server: Terminal Pastebin, Webhook Inspector and Mock REST API. Every other tool works, and signing in works too (it happens on PMC ID, see below). The "Suggest an app" form falls back to an email link unless you set `NEXT_PUBLIC_SUGGEST_ENDPOINT`.
 

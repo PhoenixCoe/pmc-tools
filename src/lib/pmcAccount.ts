@@ -19,7 +19,7 @@ const same = (x: string, y: string) => { if (x.length !== y.length) return false
 const okImg = (v: unknown): v is string => typeof v === 'string' && /^data:image\/(png|jpe?g|webp);base64,/.test(v) && v.length < 120000;
 
 /** Which PMC site this is, as PMC ID knows it. The address the person goes back to comes from PMC ID's own list, never from here. */
-const appId = () => (location.hostname === 'apps.pmcstudios.uk' ? 'apps' : 'tools');
+const appId = () => 'tools';
 
 export function savedUser(): Account | null {
   try {

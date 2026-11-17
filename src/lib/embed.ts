@@ -1,7 +1,7 @@
 /**
  * Lets another page (Coe, at coe.pmcstudios.uk) open any app inside a frame and work it, the way a person would.
  *
- *   https://apps.pmcstudios.uk/pixel-art-maker?embed=1&host=https://coe.pmcstudios.uk
+ *   https://tools.pmcstudios.uk/pixel-art-maker?embed=1&host=https://coe.pmcstudios.uk
  *
  * In that mode the page shows only the tool (no bar, footer or questions), and answers messages from the page that opened it.
  * Nothing leaves the browser: the messages go between the two pages on the person's own device.

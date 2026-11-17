@@ -1,4 +1,4 @@
-# Putting PMC Apps online (apps.pmcstudios.uk)
+# Putting PMC Apps online (tools.pmcstudios.uk)
 
 GitHub Pages hosts plain files, so the site is built as a static export (`npm run build:static`). The three apps that need a server
 (Terminal Pastebin, Webhook Inspector, Mock REST API) are switched off in that build. Every other tool works. The "Suggest an app" form falls back to an email link.
@@ -9,10 +9,10 @@ GitHub Pages hosts plain files, so the site is built as a static export (`npm ru
 3. Repository > **Settings** > **Pages** (left menu) > Build and deployment > Source: **GitHub Actions**.
 4. **Code** tab > **Add file** > **Create new file**. In the name box type `.github/workflows/pages.yml` (typing each `/` starts a folder). Paste everything from `1-create-this-file-on-GitHub/pages.yml`. Press **Commit changes**.
 5. **Actions** tab. Wait for the green tick on "Deploy to GitHub Pages" (about 3 minutes).
-6. Settings > Pages > **Custom domain**: type `apps.pmcstudios.uk` > **Save**.
+6. Settings > Pages > **Custom domain**: type `tools.pmcstudios.uk` > **Save**.
 7. Where pmcstudios.uk's DNS is managed (Cloudflare dashboard > pmcstudios.uk > **DNS** > **Records** > **Add record**): Type `CNAME`, Name `apps`, Target `<your-github-name>.github.io`, Proxy status **DNS only** (grey cloud). **Save**.
 8. Back in Settings > Pages, wait for "DNS check successful" (minutes, sometimes a few hours). Tick **Enforce HTTPS**.
-9. Open https://apps.pmcstudios.uk and press Ctrl+Shift+R.
+9. Open https://tools.pmcstudios.uk and press Ctrl+Shift+R.
 
 ## Turn on "Sign in" (optional, needs PMC ID to be live first)
 1. Repository > **Settings** > **Secrets and variables** > **Actions** > **Variables** tab > **New repository variable**. Name `SUPABASE_URL`, value: your Supabase Project URL (the same one Coe and PMC ID use).
@@ -27,5 +27,5 @@ Upload the changed files the same way (**Add file > Upload files**, same folder 
 Needs Node.js 22 or newer. `npm install`, then `npm run dev` (editing) or `npm run build:static` then `npx serve out` (the real thing).
 
 ## Each app has its own address
-Every app is at `apps.pmcstudios.uk/<app-name>`, for example `apps.pmcstudios.uk/case-converter`. One domain with a clean path per app is the best set-up for search.
-Sub-domains per app (`case-converter.apps.pmcstudios.uk`) are not possible on GitHub Pages alone, since a Pages site gets exactly one custom domain.
+Every app is at `tools.pmcstudios.uk/<app-name>`, for example `tools.pmcstudios.uk/case-converter`. One domain with a clean path per app is the best set-up for search.
+Sub-domains per app (`case-converter.tools.pmcstudios.uk`) are not possible on GitHub Pages alone, since a Pages site gets exactly one custom domain.

@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     await nodemailer.createTransport(server).sendMail({
       to: TO, from, replyTo: email || undefined,
       subject: `App idea: ${oneLine(app)}`,
-      text: [`App: ${oneLine(app)}`, `From: ${email || 'no email given'}`, '', 'What it should do:', what, ...(example ? ['', 'Example of using it:', example] : []), '', `Sent from apps.pmcstudios.uk`].join('\n'),
+      text: [`App: ${oneLine(app)}`, `From: ${email || 'no email given'}`, '', 'What it should do:', what, ...(example ? ['', 'Example of using it:', example] : []), '', `Sent from tools.pmcstudios.uk`].join('\n'),
     });
     return reply(200);
   } catch {
