@@ -38,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <EmbedBridge />
               <Script src="/js/pmc-logo.js" strategy="afterInteractive" />
         <Script src="/js/pmc-account.js" strategy="afterInteractive" />
+        <Script src="/js/pmc-by.js" strategy="afterInteractive" />
       </body>
     </html>
   );

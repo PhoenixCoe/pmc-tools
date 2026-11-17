@@ -8,6 +8,7 @@ import { UiIcon } from './icons';
 import { Logo } from './Logo';
 import { AUTH_ENABLED } from './Providers';
 import { AccountMenu, useAccount } from './Account';
+import { ACCOUNTS } from '@/lib/pmcAccount';
 
 // The two menus hold every app icon, so they load when first needed, not with the page.
 const AppsMenu = dynamic(() => import('./AppsMenu').then((m) => m.AppsMenu), { ssr: false });
@@ -52,24 +53,35 @@ export function SiteBar({ home, path, currentKey, currentSlug }: { home: boolean
     ? <button type="button" onClick={signOut}>Sign out ({user.name || user.email})</button>
     : <button type="button" onClick={signIn}>Sign in</button>;
 
+  // The shared PMC apps button, from the same file every PMC site uses.
+  const by = useRef<HTMLSpanElement>(null);
+  useEffect(() => {
+    let t: ReturnType<typeof setInterval> | undefined;
+    const go = () => { const w = window as unknown as { PmcBy?: { mount: (el: HTMLElement) => void } }; if (!w.PmcBy || !by.current) return false; if (!by.current.firstChild) w.PmcBy.mount(by.current); return true; };
+    if (!go()) t = setInterval(() => { if (go()) clearInterval(t); }, 50);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <header className="topbar" ref={root}>
       <div className="bar-in">
         <Link className="bar-logo" href="/" aria-label="PMC Tools, home"><Logo className="bar-mark" /><span className="bar-word d">Tools</span></Link>
         <button ref={menuBtn} type="button" className={`bar-nav bar-apps${menu ? ' on' : ''}`} aria-expanded={menu} aria-controls="apps-menu" onClick={() => { setMenu((v) => !v); setMobile(false); setSheet(false); }}>
-          Tools <i className="chev" aria-hidden />
+          All tools <i className="chev" aria-hidden />
         </button>
         {home ? <span className="bar-sp" /> : <div className="bar-search"><AppSearch variant="bar" /></div>}
-        {AUTH_ENABLED && (user ? (
-          <AccountMenu key={user.email + user.image.length} user={user} signOut={signOut} />
-        ) : (
-          <button type="button" className="bar-nav bar-acct" onClick={signIn}>Sign in</button>
-        ))}
-
-        <button type="button" className="bar-nav bar-sm" aria-label="Search apps" aria-expanded={sheet} onClick={() => { setSheet((v) => !v); setMobile(false); }}><UiIcon name="search" size={22} /></button>
-        <button type="button" className={`bar-nav bar-sm bar-burger${mobile ? ' on' : ''}`} aria-expanded={mobile} aria-controls="mobile-menu" onClick={() => { setMobile((v) => !v); setSheet(false); }}>
-          Menu <UiIcon name={mobile ? 'close' : 'menu'} size={20} />
-        </button>
+        <div className="bar-end">
+          <button type="button" className="bar-nav bar-sm" aria-label="Search tools" aria-expanded={sheet} onClick={() => { setSheet((v) => !v); setMobile(false); }}><UiIcon name="search" size={22} /></button>
+          <button type="button" className={`bar-nav bar-sm bar-burger${mobile ? ' on' : ''}`} aria-label="Menu" aria-expanded={mobile} aria-controls="mobile-menu" onClick={() => { setMobile((v) => !v); setSheet(false); }}>
+            <UiIcon name={mobile ? 'close' : 'menu'} size={22} />
+          </button>
+          <span ref={by} className="bar-by" />
+          {user ? (
+            <AccountMenu key={user.email + user.image.length} user={user} signOut={signOut} />
+          ) : (
+            <button type="button" className="pa-btn bar-pfp" aria-label="Sign in with PMC ID" title="Sign in with PMC ID" onClick={AUTH_ENABLED ? signIn : () => { location.assign(`${ACCOUNTS}/signin/?app=tools`); }}><UiIcon name="user" size={24} /></button>
+          )}
+        </div>
       </div>
       {menu && <AppsMenu currentKey={currentKey} currentSlug={currentSlug} onClose={() => setMenu(false)} />}
       {mobile && <MobileMenu currentKey={currentKey} currentSlug={currentSlug} onClose={() => setMobile(false)} accountLink={accountLink} />}

@@ -25,7 +25,7 @@ function paint(size: number, s: S, img: HTMLImageElement | null) {
     x.drawImage(img, (size - img.naturalWidth * k) / 2, (size - img.naturalHeight * k) / 2, img.naturalWidth * k, img.naturalHeight * k);
   } else {
     const t = [...s.text.trim()].slice(0, 2).join('') || '?', fs = (size - p * 2) * (t.length > 1 ? 0.62 : 0.88);
-    x.fillStyle = s.fg; x.font = `700 ${fs}px "Caracteres L2", "Arial Narrow", Arial, sans-serif`; x.textAlign = 'center'; x.textBaseline = 'alphabetic';
+    x.fillStyle = s.fg; x.font = `700 ${fs}px "PMC Header", "Arial Narrow", Arial, sans-serif`; x.textAlign = 'center'; x.textBaseline = 'alphabetic';
     const m = x.measureText(t), h = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
     x.fillText(t, size / 2, size / 2 + h / 2 - m.actualBoundingBoxDescent);
   }

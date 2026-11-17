@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { Belt, Halftone } from '@/components/shared/Belt';
 import { Surprise } from '@/components/shared/Surprise';
 import { Browse } from '@/components/shared/Browse';
 import { AppIcon } from '@/components/shared/icons';
@@ -28,7 +27,6 @@ export default function Home() {
   return (
     <>
       <section className="start" aria-labelledby="start-title">
-        <Halftone className="ht-tr" />
         <div className="wrap start-in">
           <h1 id="start-title" className="d">{ready.length} free tools</h1>
           <p className="for d" aria-hidden>
@@ -43,10 +41,22 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Belt items={searchIndex.slice(0, 40).map((a) => ({ slug: a.slug, title: a.title, key: a.key }))} />
+      <section className="wrap gblocks" aria-label="Kinds of tool">
+        <ul>
+          {groupList.map((g) => (
+            <li key={g.key} data-g={g.key}>
+              <Link href={`/${g.slug}/`} className="gb gtone">
+                <span className="gb-ics" aria-hidden>{g.apps.slice(0, 4).map((a) => <span key={a.slug} className="gb-i"><AppIcon slug={a.slug} size={36} still /></span>)}</span>
+                <b className="d">{g.name}</b>
+                <span className="gb-b">{g.blurb}</span>
+                <i className="gb-n d">{g.apps.length} tools</i>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
       <div className="wrap body">
         <section className="newband" aria-label="New">
-          <Halftone className="ht-tr" />
           <div className="nb-in">
             <span className="nb-tag d">New</span>
             <h2 className="d">Timer, stopwatch and countdown</h2>
