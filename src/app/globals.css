@@ -1681,3 +1681,41 @@ a, button, summary, input, select, textarea, [role='button'], [role='tab'], [rol
   .about-grid { grid-template-columns: 1fr; }
   .jump a { padding: 6px 11px 4px; font-size: 1.05rem; }
 }
+
+/* Tool page header: back to the plain header (icon, name, one line), with colour on the icon and the chips */
+.ahero { background: var(--paper); color: var(--ink); border-bottom: 0; padding: 30px 0 4px; }
+.ahero-in { gap: 18px; }
+.ahero-ic { border: 3px solid var(--ink); background: var(--gc); box-shadow: 5px 5px 0 var(--gs); }
+.ahero-t h1 { color: var(--ink); }
+.ahero-t p { opacity: 0.85; }
+.achip { background: var(--gc); color: var(--gf); border-color: var(--ink); box-shadow: 3px 3px 0 var(--gs); }
+@media (max-width: 800px) { .ahero { padding-top: 20px; } }
+
+/* Tool pages fit the screen: a slim header so the tool itself starts right under the bar */
+.ahero { padding: 14px 0 0; }
+.ahero-in { gap: 0; }
+.ahero-row { gap: 14px; }
+.ahero-ic { width: 52px; height: 52px; box-shadow: 4px 4px 0 var(--gs); }
+.ahero-t { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; }
+.ahero-t h1 { font-size: clamp(2rem, 3.2vw, 2.6rem); line-height: 0.95; }
+.ahero-t p { margin: 0; font-size: 1.05rem; line-height: 1.2; }
+.ahero + .body { padding-top: 16px; gap: clamp(28px, 4vw, 44px); }
+/* Timer: the whole set-up, with the Start button, on one screen */
+.tm-num { font-size: clamp(2.8rem, min(10vw, 11vh), 5.4rem); padding: 8px 0 2px; }
+.tm-colon { font-size: clamp(2.2rem, min(7vw, 8vh), 3.8rem); padding-bottom: 30px; }
+.tm-set { gap: 12px; }
+.tm-unit { gap: 6px; }
+.tm-step { height: 32px; }
+.tm-big { font-size: clamp(3.8rem, min(15vw, 22vh), 9rem); }
+.tm-run { gap: 12px; padding: clamp(16px, 3vh, 36px) 16px; }
+/* Phones only: everything a step smaller */
+@media (max-width: 800px) {
+  html { font-size: 14px; }
+  .ahero { padding-top: 10px; }
+  .ahero-ic { width: 40px; height: 40px; box-shadow: 3px 3px 0 var(--gs); }
+  .ahero-row { gap: 10px; }
+  .ahero-t h1 { font-size: 1.9rem; }
+  .ahero-t p { font-size: 0.95rem; }
+  .ahero + .body { padding-top: 12px; gap: 28px; }
+}
+@media (max-width: 800px) { .seg button { padding: 7px 8px; letter-spacing: 0.01em; } }

@@ -45,11 +45,8 @@ export function AppPage({ category, slug, children }: { category: string; slug: 
           <section id="tool" className="bleed" aria-label={m.title}>{children}</section>
         </>
       ) : (
-        <header className="ahero gtone">
+        <header className="ahero">
           <div className="wrap ahero-in">
-            <nav className="crumbs" aria-label="You are here">
-              <Link href="/">All tools</Link><i aria-hidden>/</i><Link href={`/${c.slug}/`}>{c.name}</Link>
-            </nav>
             <div className="ahero-row">
               <span className="ahero-ic" aria-hidden><AppIcon slug={m.slug} size={96} still /></span>
               <div className="ahero-t">
@@ -57,13 +54,6 @@ export function AppPage({ category, slug, children }: { category: string; slug: 
                 <p>{m.tagline}</p>
               </div>
             </div>
-            <ul className="achips">
-              <li className="achip"><UiIcon name={MODE_ICON[m.mode]} size={18} />{MODE_LABEL[m.mode]}</li>
-              <li className="achip"><UiIcon name="check" size={18} />Free, no sign-in</li>
-            </ul>
-            <nav className="jump" aria-label="On this page">
-              <a href="#tool">Use it</a><a href="#about">About</a><a href="#faq-title">Questions</a><a href="#more">More tools</a>
-            </nav>
           </div>
         </header>
       )}

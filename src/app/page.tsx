@@ -41,34 +41,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="wrap gblocks" aria-label="Kinds of tool">
-        <ul>
-          {groupList.map((g) => (
-            <li key={g.key} data-g={g.key}>
-              <Link href={`/${g.slug}/`} className="gb gtone">
-                <span className="gb-ics" aria-hidden>{g.apps.slice(0, 4).map((a) => <span key={a.slug} className="gb-i"><AppIcon slug={a.slug} size={36} still /></span>)}</span>
-                <b className="d">{g.name}</b>
-                <span className="gb-b">{g.blurb}</span>
-                <i className="gb-n d">{g.apps.length} tools</i>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
       <div className="wrap body">
-        <section className="newband" aria-label="New">
-          <div className="nb-in">
-            <span className="nb-tag d">New</span>
-            <h2 className="d">Timer, stopwatch and countdown</h2>
-            <p>Set a time with big buttons, run laps, or count down to a date.</p>
-            <Link href="/pomodoro-focus-studio/" className="btn nb-btn">Open the timer</Link>
-          </div>
-          <dl className="nb-stats">
-            <div><dt className="d">{ready.length}</dt><dd>free tools</dd></div>
-            <div><dt className="d">0</dt><dd>sign-ins needed</dd></div>
-            <div><dt className="d">0</dt><dd>files uploaded</dd></div>
-          </dl>
-        </section>
         <RecentList apps={searchIndex.map((a) => ({ slug: a.slug, title: a.title, href: a.href }))} />
         <section className="picks" aria-labelledby="picks-title">
           <h2 id="picks-title" className="d">Start here</h2>
