@@ -1,8 +1,9 @@
 'use client';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useMemo } from 'react';
 import { GROUP_COLOURS } from '@/lib/categories';
 import { avatarDataUrl, paintFavicon } from '@/lib/favicon';
+import { takeReturn } from '@/lib/pmcAccount';
 import type { GroupKey } from '@/lib/types';
 import type { AppsData } from './AppsContext';
 import { AppsProvider } from './AppsContext';
@@ -22,6 +23,10 @@ export function Shell({ children, data }: { children: React.ReactNode; data: App
   const bare = BARE.has(path);
   const home = path === '/';
   const { user } = useAccount();
+  const router = useRouter();
+
+  // Coming back from PMC ID with a sign-in in the address: take it, then go back to the page you were on.
+  useEffect(() => { takeReturn().then((r) => { if (r) router.replace(r.from); }); }, [router]);
 
   const { currentKey, currentSlug } = useMemo(() => {
     const app = data.index.find((a) => a.href === path);

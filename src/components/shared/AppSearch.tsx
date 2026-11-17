@@ -61,7 +61,7 @@ export function AppSearch({ variant, onDone, autoFocus = false }: { variant: 'he
         <UiIcon name="search" size={variant === 'hero' ? 24 : 18} />
         <input
           ref={input} data-appsearch="" type="search" value={q} autoComplete="off" spellCheck={false}
-          placeholder={`Search ${index.length} apps`} aria-label="Search apps"
+          placeholder={`Search ${index.length} tools`} aria-label="Search tools"
           role="combobox" aria-expanded={showing && results.length > 0} aria-controls={listId} aria-autocomplete="list"
           aria-activedescendant={showing && results[sel] ? `${listId}-${sel}` : undefined}
           onFocus={() => setOpen(true)} onChange={(e) => { setQ(e.target.value); setOpen(true); }} onKeyDown={onKey}

@@ -14,7 +14,7 @@ const EXAMPLES: Record<Lang, string> = {
   js: '// Add two numbers\nfunction add(first, second) {\n  /* the sum */\n  const total = first + second;\n  return total;\n}\n\nconsole.log(add(2, 3));\n',
   css: '/* Card */\n.card {\n  display: flex;\n  gap: 8px;\n  padding: 12px 16px;\n  width: calc(100% - 20px);\n}\n\n.card > p {\n  margin: 0 auto;\n}\n',
   html: '<div class="card">\n  <!-- heading -->\n  <h2>Title</h2>\n  <p>Some   <b>bold</b> text</p>\n</div>\n',
-  json: '{\n  "name": "PMC Apps",\n  "tags": [ "text", "files" ],\n  "count": 60\n}\n',
+  json: '{\n  "name": "PMC Tools",\n  "tags": [ "text", "files" ],\n  "count": 60\n}\n',
 };
 const fmt = (n: number) => `${n.toLocaleString('en-GB')} B`;
 

@@ -5,7 +5,7 @@ import { SuggestForm } from '@/components/shared/SuggestForm';
 import { SITE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Suggest an app',
+  title: 'Suggest an App',
   description: 'Tell us which small tool you wish existed. Every idea goes to the PMC Studios inbox.',
   alternates: { canonical: `${SITE}/suggest` },
 };

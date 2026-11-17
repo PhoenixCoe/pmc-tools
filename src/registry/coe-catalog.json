@@ -643,7 +643,7 @@
  {
   "slug": "pomodoro-focus-studio",
   "cat": "productivity-student",
-  "title": "Pomodoro & Focus Studio",
+  "title": "Timer",
   "tagline": "Focus and break timer",
   "mode": "local",
   "fullscreen": false,

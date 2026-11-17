@@ -1,2 +1,2 @@
-/** Sign-in is switched off in the static (GitHub Pages) build, where there is no server to handle it. */
-export const AUTH_ENABLED = process.env.NEXT_PUBLIC_AUTH !== 'off';
+/** Sign-in is through PMC ID. It is only offered when this copy of the site was built with the PMC ID settings (see src/lib/pmcAccount.ts). */
+export { ACCOUNTS_ON as AUTH_ENABLED } from '@/lib/pmcAccount';

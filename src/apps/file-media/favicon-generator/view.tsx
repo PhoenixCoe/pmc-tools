@@ -11,7 +11,7 @@ import { useLocalState } from '@/lib/useLocalState';
 
 type Mode = 'text' | 'image';
 interface S { mode: Mode; text: string; bg: string; fg: string; shape: 'square' | 'round' | 'circle'; pad: number; name: string; theme: string }
-const DEF: S = { mode: 'text', text: 'P', bg: '#337957', fg: '#F2E4CE', shape: 'square', pad: 14, name: 'My site', theme: '#337957' };
+const DEF: S = { mode: 'text', text: 'P', bg: '#337957', fg: '#FBF6EC', shape: 'square', pad: 14, name: 'My site', theme: '#337957' };
 const SIZES: [string, number][] = [['favicon-16x16.png', 16], ['favicon-32x32.png', 32], ['favicon-48x48.png', 48], ['apple-touch-icon.png', 180], ['android-chrome-192x192.png', 192], ['android-chrome-512x512.png', 512]];
 
 function paint(size: number, s: S, img: HTMLImageElement | null) {

@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import type { Metadata, Viewport } from 'next';
 import './fonts.generated.css';
 import './globals.css';
@@ -6,14 +7,14 @@ import { IconMotion } from '@/components/shared/IconMotion';
 import { RangeStyler } from '@/components/shared/RangeStyler';
 import { Shell } from '@/components/shared/Shell';
 import { PREFS_SCRIPT } from '@/lib/prefs';
-import { SITE } from '@/lib/seo';
+import { SITE, SITE_NAME } from '@/lib/seo';
 import { groupList, searchIndex } from '@/registry';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
-  title: { default: 'PMC Apps: small tools that just work', template: '%s | PMC Apps' },
+  title: { default: SITE_NAME, template: `%s - ${SITE_NAME}` },
   description: `${searchIndex.length} small tools for text, files, study, code and the web. No sign-up, no install.`,
-  openGraph: { siteName: 'PMC Apps', type: 'website' },
+  openGraph: { siteName: SITE_NAME, type: 'website' },
   icons: { icon: [{ url: '/favicon.ico', sizes: '48x48' }, { url: '/favicon.svg', type: 'image/svg+xml' }], apple: '/apple-touch-icon.png' },
 };
 export const viewport: Viewport = { themeColor: '#171717', viewportFit: 'cover' };
@@ -35,6 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <RangeStyler />
         <IconMotion />
         <EmbedBridge />
+              <Script src="/js/pmc-logo.js" strategy="afterInteractive" />
+        <Script src="/js/pmc-account.js" strategy="afterInteractive" />
       </body>
     </html>
   );

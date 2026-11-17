@@ -16,7 +16,7 @@ function nearest(fg: string, bg: string, target: number) {
 
 export default function View() {
   const [fg, setFg] = useLocalState('wcag-contrast-studio', 'fg', '#171717');
-  const [bg, setBg] = useLocalState('wcag-contrast-studio', 'bg', '#f2e4ce');
+  const [bg, setBg] = useLocalState('wcag-contrast-studio', 'bg', '#fbf6ec');
   const ratio = useMemo(() => contrast(fg, bg), [fg, bg]);
   const fixes = useMemo(() => [4.5, 7].filter((t) => ratio < t).map((t) => ({ t, c: nearest(fg, bg, t) })), [fg, bg, ratio]);
   return (

@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from 'react';
 import type { GroupKey } from '@/lib/types';
 import { AppSearch } from './AppSearch';
 import { UiIcon } from './icons';
-import { Lockup } from './Lockup';
+import { Logo } from './Logo';
 import { AUTH_ENABLED } from './Providers';
-import { Avatar, useAccount } from './Account';
+import { AccountMenu, useAccount } from './Account';
 
 // The two menus hold every app icon, so they load when first needed, not with the page.
 const AppsMenu = dynamic(() => import('./AppsMenu').then((m) => m.AppsMenu), { ssr: false });
@@ -18,7 +18,7 @@ const MobileMenu = dynamic(() => import('./MobileMenu').then((m) => m.MobileMenu
  * and the account end. On a phone it folds to the logo, a search button and one Menu button.
  */
 export function SiteBar({ home, path, currentKey, currentSlug }: { home: boolean; path: string; currentKey?: GroupKey; currentSlug?: string }) {
-  const { user, signOut } = useAccount();
+  const { user, signIn, signOut } = useAccount();
   const [menu, setMenu] = useState(false);
   const [mobile, setMobile] = useState(false);
   const [sheet, setSheet] = useState(false);
@@ -48,27 +48,23 @@ export function SiteBar({ home, path, currentKey, currentSlug }: { home: boolean
     return () => window.removeEventListener('pmc:search', jump);
   }, []);
 
-  const signIn = `/signin?from=${encodeURIComponent(path)}`;
-  const accountLink = AUTH_ENABLED && user
+  const accountLink = !AUTH_ENABLED ? null : user
     ? <button type="button" onClick={signOut}>Sign out ({user.name || user.email})</button>
-    : <Link href={signIn}>Sign in</Link>;
+    : <button type="button" onClick={signIn}>Sign in</button>;
 
   return (
     <header className="topbar" ref={root}>
       <div className="bar-in">
-        <Link className="bar-logo" href="/" aria-label="PMC Apps, home"><Lockup plain /></Link>
+        <Link className="bar-logo" href="/" aria-label="PMC Tools, home"><Logo className="bar-mark" /><span className="bar-word d">Tools</span></Link>
         <button ref={menuBtn} type="button" className={`bar-nav bar-apps${menu ? ' on' : ''}`} aria-expanded={menu} aria-controls="apps-menu" onClick={() => { setMenu((v) => !v); setMobile(false); setSheet(false); }}>
-          Apps <i className="chev" aria-hidden />
+          Tools <i className="chev" aria-hidden />
         </button>
         {home ? <span className="bar-sp" /> : <div className="bar-search"><AppSearch variant="bar" /></div>}
-        {AUTH_ENABLED && user ? (
-          <>
-            <span className="bar-who"><Avatar user={user} size={34} /><b className="d">{user.name || 'Signed in'}</b></span>
-            <button type="button" className="bar-nav bar-acct" onClick={signOut}>Sign out</button>
-          </>
+        {AUTH_ENABLED && (user ? (
+          <AccountMenu key={user.email + user.image.length} user={user} signOut={signOut} />
         ) : (
-          <Link className="bar-nav bar-acct" href={signIn}>Sign in</Link>
-        )}
+          <button type="button" className="bar-nav bar-acct" onClick={signIn}>Sign in</button>
+        ))}
 
         <button type="button" className="bar-nav bar-sm" aria-label="Search apps" aria-expanded={sheet} onClick={() => { setSheet((v) => !v); setMobile(false); }}><UiIcon name="search" size={22} /></button>
         <button type="button" className={`bar-nav bar-sm bar-burger${mobile ? ' on' : ''}`} aria-expanded={mobile} aria-controls="mobile-menu" onClick={() => { setMobile((v) => !v); setSheet(false); }}>

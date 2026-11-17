@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const MAIL = 'ideas@pmcstudios.uk';
 // A copy hosted somewhere with no server can post to a form service instead; set this to its address.
-const ENDPOINT = process.env.NEXT_PUBLIC_SUGGEST_ENDPOINT || (process.env.NEXT_PUBLIC_AUTH === 'off' ? '' : '/api/suggest');
+const ENDPOINT = process.env.NEXT_PUBLIC_SUGGEST_ENDPOINT || (process.env.NEXT_PUBLIC_STATIC === '1' ? '' : '/api/suggest');
 
 export function SuggestForm() {
   const [f, setF] = useState({ app: '', what: '', example: '', email: '', website: '' });

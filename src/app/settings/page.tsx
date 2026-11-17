@@ -6,7 +6,7 @@ import { SITE } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Settings',
-  description: 'Choose how PMC Apps looks and behaves on this device.',
+  description: 'Choose how PMC Tools looks and behaves on this device.',
   robots: { index: false, follow: true },
   alternates: { canonical: `${SITE}/settings` },
 };

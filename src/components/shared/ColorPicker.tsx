@@ -22,7 +22,7 @@ const toHex = ({ h, s, v }: Hsv) => {
 
 /** Colours to start from: the PMC ones first, then plain everyday colours. */
 const PRESETS: [string, string][] = [
-  ['#171717', 'Black'], ['#ffffff', 'White'], ['#f2e4ce', 'Cream'], ['#b49a57', 'Gold'], ['#337957', 'Green'], ['#1a4934', 'Deep green'],
+  ['#171717', 'Black'], ['#ffffff', 'White'], ['#fbf6ec', 'PMC white'], ['#b49a57', 'Gold'], ['#337957', 'Green'], ['#1a4934', 'Deep green'],
   ['#a33a2b', 'Red'], ['#d9822b', 'Orange'], ['#e8c547', 'Yellow'], ['#2f5d9e', 'Blue'], ['#6b4fa0', 'Purple'], ['#e58fb0', 'Pink'],
 ];
 

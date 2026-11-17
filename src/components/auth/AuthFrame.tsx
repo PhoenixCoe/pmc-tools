@@ -5,7 +5,7 @@ import { Logo } from '@/components/shared/Logo';
 export function AuthFrame({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div className="auth">
-      <header className="auth-top"><Link href="/" aria-label="PMC Apps, home"><Logo /></Link></header>
+      <header className="auth-top"><Link href="/" aria-label="PMC Tools, home"><Logo /></Link></header>
       <main id="main" className="auth-main" tabIndex={-1}>
         <section className="auth-box" aria-labelledby="auth-title">
           <div className="auth-side tone-green">

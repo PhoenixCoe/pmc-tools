@@ -1,6 +1,6 @@
 # Putting PMC Apps online (apps.pmcstudios.uk)
 
-GitHub Pages hosts plain files, so the site is built as a static export (`npm run build:static`). Sign-in, saved accounts and the three apps that need a server
+GitHub Pages hosts plain files, so the site is built as a static export (`npm run build:static`). The three apps that need a server
 (Terminal Pastebin, Webhook Inspector, Mock REST API) are switched off in that build. Every other tool works. The "Suggest an app" form falls back to an email link.
 
 ## First time
@@ -13,6 +13,12 @@ GitHub Pages hosts plain files, so the site is built as a static export (`npm ru
 7. Where pmcstudios.uk's DNS is managed (Cloudflare dashboard > pmcstudios.uk > **DNS** > **Records** > **Add record**): Type `CNAME`, Name `apps`, Target `<your-github-name>.github.io`, Proxy status **DNS only** (grey cloud). **Save**.
 8. Back in Settings > Pages, wait for "DNS check successful" (minutes, sometimes a few hours). Tick **Enforce HTTPS**.
 9. Open https://apps.pmcstudios.uk and press Ctrl+Shift+R.
+
+## Turn on "Sign in" (optional, needs PMC ID to be live first)
+1. Repository > **Settings** > **Secrets and variables** > **Actions** > **Variables** tab > **New repository variable**. Name `SUPABASE_URL`, value: your Supabase Project URL (the same one Coe and PMC ID use).
+2. Again **New repository variable**. Name `SUPABASE_ANON_KEY`, value: the **publishable** key (starts `sb_publishable_`). Never the secret key: the publish step stops if it sees one.
+3. **Actions** tab > **Deploy to GitHub Pages** > **Run workflow**. Sign in now appears in the top bar.
+That is all: the sign-in page, passwords and emails are PMC ID's job (`accounts.pmcstudios.uk`, set up in the PMC ID guide).
 
 ## Updating later
 Upload the changed files the same way (**Add file > Upload files**, same folder paths), then **Commit changes**. The Actions tab rebuilds the site.

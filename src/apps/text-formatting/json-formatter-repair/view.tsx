@@ -7,7 +7,7 @@ import { useLocalState } from '@/lib/useLocalState';
 import { parseJson, repairJson, sortKeys, stats, stringify, type Indent } from './utils';
 
 const APP = 'json-formatter-repair';
-const EXAMPLE = "{\n  name: 'PMC Apps', // unquoted key and single quotes\n  tags: ['text', 'files',],\n  active: True,\n  count: 60\n}";
+const EXAMPLE = "{\n  name: 'PMC Tools', // unquoted key and single quotes\n  tags: ['text', 'files',],\n  active: True,\n  count: 60\n}";
 const MAX_ITEMS = 200;
 
 type Mode = 'init' | 'all' | 'none';

@@ -11,7 +11,7 @@ import { registerApi } from '@/lib/embed';
 type Tool = 'pencil' | 'eraser' | 'fill' | 'pick' | 'line' | 'box';
 const CELL = 16, KEY = 'pmc:pixel-art-maker:project';
 const PALETTES: Record<string, string[]> = {
-  PMC: ['#171717', '#1A4934', '#337957', '#B49A57', '#F2E4CE', '#FBF6EC', '#A33A2B', '#5b3a29', '#e0a458', '#4a6fa5', '#9fc2e8', '#7a7a7a', '#bdbdbd', '#ffffff', '#ff8fab', '#6a4c93'],
+  PMC: ['#171717', '#1A4934', '#337957', '#B49A57', '#FBF6EC', '#FBF6EC', '#A33A2B', '#5b3a29', '#e0a458', '#4a6fa5', '#9fc2e8', '#7a7a7a', '#bdbdbd', '#ffffff', '#ff8fab', '#6a4c93'],
   'Green screen': ['#0f380f', '#306230', '#8bac0f', '#9bbc0f'],
   Pico: ['#000000', '#1d2b53', '#7e2553', '#008751', '#ab5236', '#5f574f', '#c2c3c7', '#fff1e8', '#ff004d', '#ffa300', '#ffec27', '#00e436', '#29adff', '#83769c', '#ff77a8', '#ffccaa'],
   Mono: ['#000000', '#555555', '#aaaaaa', '#ffffff'],

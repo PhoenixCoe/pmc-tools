@@ -35,7 +35,7 @@ export default function View() {
     const W = c.clientWidth, H = 180, r = window.devicePixelRatio || 1; c.width = W * r; c.height = H * r;
     const x = c.getContext('2d')!; x.scale(r, r); x.fillStyle = '#FBF6EC'; x.fillRect(0, 0, W, H);
     const sa = (a / d.duration) * W, sb = (b / d.duration) * W;
-    x.fillStyle = '#F2E4CE'; x.fillRect(sa, 0, sb - sa, H);
+    x.fillStyle = '#FBF6EC'; x.fillRect(sa, 0, sb - sa, H);
     for (let i = 0; i < W; i++) { const k = Math.floor((i / W) * (p.length / 2)); const inside = i >= sa && i <= sb; x.fillStyle = inside ? '#337957' : '#9a9a8a'; const y1 = H / 2 + p[k * 2] * (H / 2 - 6), y2 = H / 2 + p[k * 2 + 1] * (H / 2 - 6); x.fillRect(i, y1, 1, Math.max(1, y2 - y1)); }
     x.fillStyle = '#171717'; x.fillRect(sa - 2, 0, 4, H); x.fillRect(sb - 2, 0, 4, H);
     x.fillStyle = '#B49A57'; x.fillRect(sa - 8, 0, 14, 22); x.fillRect(sb - 6, H - 22, 14, 22);

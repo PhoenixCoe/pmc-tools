@@ -3,14 +3,16 @@ import type { AppMeta } from './types';
 import { categories, categoryBySlug } from './categories';
 
 export const SITE = process.env.SITE_URL ?? 'https://apps.pmcstudios.uk';
+/** The name in every tab title: the home page is "PMC Tools", every other page is "Page Name - PMC Tools". */
+export const SITE_NAME = 'PMC Tools';
 /** GitHub Pages serves every page as /name/, so canonical and sitemap URLs carry the slash there. */
 export const pageUrl = (path: string) => `${SITE}/${path}${path && process.env.STATIC_EXPORT === '1' ? '/' : ''}`;
 export const ogUrl = (m: Pick<AppMeta, 'slug'>) => `${SITE}/og/${m.slug}.png`;
 export const appUrl = (m: Pick<AppMeta, 'category' | 'slug'>) => pageUrl(m.slug);
 
 export function appMetadata(m: AppMeta): Metadata {
-  // Just the name, the same way every time: "PMC Case Converter". The description and search words do the explaining.
-  const title = `PMC ${m.title}`;
+  // The tab title, the same way on every page: "Case Converter - PMC Tools". The description and search words do the explaining.
+  const title = `${m.title} - ${SITE_NAME}`;
   const description = m.seoDescription ?? m.description;
   const url = appUrl(m);
   return {
@@ -20,7 +22,7 @@ export function appMetadata(m: AppMeta): Metadata {
     robots: m.built ? undefined : { index: false, follow: true },
     keywords: m.keywords,
     alternates: { canonical: url },
-    openGraph: { type: 'website', url, siteName: 'PMC Apps', title, description, images: [{ url: ogUrl(m), width: 1200, height: 630, alt: `${m.title} on PMC Apps` }] },
+    openGraph: { type: 'website', url, siteName: SITE_NAME, title, description, images: [{ url: ogUrl(m), width: 1200, height: 630, alt: `${m.title} on ${SITE_NAME}` }] },
     twitter: { card: 'summary_large_image', title, description, images: [ogUrl(m)] },
   };
 }
@@ -70,7 +72,7 @@ export function homeJsonLd(list: AppMeta[]) {
     {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'PMC Apps',
+      name: 'PMC Tools',
       url: SITE,
       description: 'Free browser tools for text, files, study, code and the web. No install and no account.',
       publisher: { '@type': 'Organization', name: 'PMC Studios', url: 'https://pmcstudios.uk' },
@@ -78,7 +80,7 @@ export function homeJsonLd(list: AppMeta[]) {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'PMC Apps',
+      name: 'PMC Tools',
       numberOfItems: list.length,
       itemListElement: list.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.title, url: appUrl(m) })),
     },

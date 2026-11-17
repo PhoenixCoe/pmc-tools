@@ -17,7 +17,7 @@ import { LOGO_C, LOGO_M, LOGO_P } from './logoPaths';
 const COLS = 12, ROWS = 7;
 const VB_W = 2582, VB_H = 1454;
 // [block colour, mark colour on the block]. When the blocks drop away the mark takes the block colour.
-const PAIRS: [string, string][] = [['#171717', '#F2E4CE'], ['#337957', '#F2E4CE'], ['#B49A57', '#171717'], ['#1A4934', '#F2E4CE']];
+const PAIRS: [string, string][] = [['#171717', '#FBF6EC'], ['#337957', '#FBF6EC'], ['#B49A57', '#171717'], ['#1A4934', '#FBF6EC']];
 const OUTLINE = '#171717';
 
 const clamp = (v: number) => Math.max(0, Math.min(1, v));

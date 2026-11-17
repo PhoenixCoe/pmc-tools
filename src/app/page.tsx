@@ -45,6 +45,20 @@ export default function Home() {
       </section>
       <Belt items={searchIndex.slice(0, 40).map((a) => ({ slug: a.slug, title: a.title, key: a.key }))} />
       <div className="wrap body">
+        <section className="newband" aria-label="New">
+          <Halftone className="ht-tr" />
+          <div className="nb-in">
+            <span className="nb-tag d">New</span>
+            <h2 className="d">Timer, stopwatch and countdown</h2>
+            <p>Set a time with big buttons, run laps, or count down to a date.</p>
+            <Link href="/pomodoro-focus-studio/" className="btn nb-btn">Open the timer</Link>
+          </div>
+          <dl className="nb-stats">
+            <div><dt className="d">{ready.length}</dt><dd>free tools</dd></div>
+            <div><dt className="d">0</dt><dd>sign-ins needed</dd></div>
+            <div><dt className="d">0</dt><dd>files uploaded</dd></div>
+          </dl>
+        </section>
         <RecentList apps={searchIndex.map((a) => ({ slug: a.slug, title: a.title, href: a.href }))} />
         <section className="picks" aria-labelledby="picks-title">
           <h2 id="picks-title" className="d">Start here</h2>

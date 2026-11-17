@@ -9,7 +9,7 @@ import { guess, highlight, LANGS, type Tok } from './highlight';
 
 type Theme = { bg: string; fg: string; bar: string; kw: string; str: string; com: string; num: string; fn: string; pun: string; type: string; ln: string };
 const THEMES: Record<string, Theme> = {
-  'PMC night': { bg: '#171717', fg: '#F2E4CE', bar: '#232323', kw: '#6fcf97', str: '#e5c07b', com: '#7d7a6e', num: '#e08a6a', fn: '#B49A57', pun: '#a79f8d', type: '#9fd0e6', ln: '#5d5a50' },
+  'PMC night': { bg: '#171717', fg: '#FBF6EC', bar: '#232323', kw: '#6fcf97', str: '#e5c07b', com: '#7d7a6e', num: '#e08a6a', fn: '#B49A57', pun: '#a79f8d', type: '#9fd0e6', ln: '#5d5a50' },
   'PMC paper': { bg: '#FBF6EC', fg: '#171717', bar: '#EADFC9', kw: '#1A4934', str: '#8a5a00', com: '#8d8777', num: '#A33A2B', fn: '#337957', pun: '#6b665a', type: '#2f5f8a', ln: '#b3ab98' },
   Midnight: { bg: '#0f172a', fg: '#e2e8f0', bar: '#1e293b', kw: '#c084fc', str: '#86efac', com: '#64748b', num: '#fdba74', fn: '#7dd3fc', pun: '#94a3b8', type: '#fcd34d', ln: '#475569' },
   Sand: { bg: '#2b2620', fg: '#eadfca', bar: '#383128', kw: '#e0a458', str: '#a8c686', com: '#8a7f6a', num: '#d98a7a', fn: '#9ec5d6', pun: '#b3a68c', type: '#d7b8e8', ln: '#6b604f' },

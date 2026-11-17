@@ -10,7 +10,7 @@ import type { CSSProperties, ReactNode } from 'react';
 type Cat = 'text' | 'file' | 'prod' | 'dev' | 'biz';
 interface C { bg: string; f: string; a: string; b: string }
 
-const K = '#171717', G1 = '#337957', G2 = '#1A4934', CR = '#F2E4CE', GD = '#B49A57', PP = '#FBF6EC', RD = '#A33A2B';
+const K = '#171717', G1 = '#337957', G2 = '#1A4934', CR = '#FBF6EC', GD = '#B49A57', PP = '#FBF6EC', RD = '#A33A2B';
 const PAL: Record<Cat, C> = {
   text: { bg: G1, f: CR, a: GD, b: G2 },
   file: { bg: '#B94A2C', f: CR, a: GD, b: '#6E2A15' },

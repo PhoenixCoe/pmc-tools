@@ -128,7 +128,7 @@ export function FullscreenViewport({ name, sideLabel = 'Output', toolbar, side, 
     <div className={`viewport-wrap${full ? ' is-full' : ''}`}>
       <div className="viewport-bar">
         {full && (always
-          ? <Link className="fs-brand fs-back" href="/" aria-label={`${name ?? 'App'}: back to PMC Apps`} title="Back to PMC Apps"><Logo /><b className="d">{name}</b><i className="fs-x">Apps</i></Link>
+          ? <Link className="fs-brand fs-back" href="/" aria-label={`${name ?? 'App'}: back to PMC Tools`} title="Back to PMC Tools"><Logo /><b className="d">{name}</b><i className="fs-x">Apps</i></Link>
           : <span className="fs-brand"><Logo /><b className="d">{name}</b></span>)}
         {toolbar}
         <span style={{ flex: 1 }} />

@@ -38,10 +38,10 @@ export function paintFavicon(bg: string, fg: string, b?: FaviconBadge) {
 }
 
 export const FAVICON_COLOURS = {
-  home: ['#171717', '#F2E4CE'],
-  green: ['#337957', '#F2E4CE'],
+  home: ['#171717', '#FBF6EC'],
+  green: ['#337957', '#FBF6EC'],
   gold: ['#B49A57', '#171717'],
-  cream: ['#F2E4CE', '#171717'],
-  ink: ['#171717', '#F2E4CE'],
-  deep: ['#1A4934', '#F2E4CE'],
+  cream: ['#FBF6EC', '#171717'],
+  ink: ['#171717', '#FBF6EC'],
+  deep: ['#1A4934', '#FBF6EC'],
 } as const;

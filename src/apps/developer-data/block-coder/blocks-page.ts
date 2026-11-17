@@ -30,7 +30,7 @@ export const EXTRA_ELEMENTS = ['textarea', 'datepick', 'timepick', 'quote', 'cod
   'card', 'grid', 'navbar', 'details', 'scrollbox'];
 
 export const PALETTES: Record<string, { back: string; text: string; accent: string; on: string; soft: string }> = {
-  PMC: { back: '#f2e4ce', text: '#171717', accent: '#337957', on: '#f2e4ce', soft: '#fbf6ec' },
+  PMC: { back: '#fbf6ec', text: '#171717', accent: '#337957', on: '#fbf6ec', soft: '#fbf6ec' },
   Sunset: { back: '#fff1e6', text: '#3b1f2b', accent: '#e4572e', on: '#ffffff', soft: '#ffe0cc' },
   Ocean: { back: '#e8f4fb', text: '#0b2540', accent: '#1c7ed6', on: '#ffffff', soft: '#cfe8f7' },
   Forest: { back: '#eef5ea', text: '#17301d', accent: '#2f7d3a', on: '#ffffff', soft: '#d9ebd2' },

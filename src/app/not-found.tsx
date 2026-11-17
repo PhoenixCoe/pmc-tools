@@ -1,6 +1,9 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { ShakeOnMount } from '@/components/shared/ShakeOnMount';
+
+export const metadata: Metadata = { title: 'Not Found', robots: { index: false } };
 
 const delay = (ms: number) => ({ '--d': `${ms}ms` }) as CSSProperties;
 

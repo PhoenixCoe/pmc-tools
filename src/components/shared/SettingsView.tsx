@@ -1,7 +1,7 @@
 'use client';
 import { UiIcon } from './icons';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { takeNote } from '@/lib/pmcAccount';
 import { clearSaved, DEFAULTS, readPrefs, savePref, type Prefs } from '@/lib/prefs';
 import { AUTH_ENABLED } from './Providers';
 import { Seg } from './Segmented';
@@ -21,7 +21,9 @@ function Choice<K extends keyof Prefs>({ label, hint, name, value, options, onPi
 export function SettingsView() {
   const [p, setP] = useState<Prefs>(DEFAULTS);
   const [cleared, setCleared] = useState<number | null>(null);
-  const { user, signOut } = useAccount();
+  const { user, signIn, signOut } = useAccount();
+  const [refused, setRefused] = useState(false);
+  useEffect(() => setRefused(takeNote()), []);
   useEffect(() => setP(readPrefs()), []);
   const pick = <K extends keyof Prefs>(k: K, v: Prefs[K]) => { savePref(k, v); setP((x) => ({ ...x, [k]: v })); };
 
@@ -38,9 +40,10 @@ export function SettingsView() {
           ) : (
             <div className="opt">
               <div className="opt-t"><b className="d">Not signed in</b><small className="tx">Every app works without an account.</small></div>
-              <Link className="btn small gold" href="/signin?from=%2Fsettings">Sign in</Link>
+              <button type="button" className="btn small gold" onClick={signIn}>Sign in</button>
             </div>
           )}
+          {refused && !user && <p role="status" className="tx saved-note">That sign-in did not come from this window, so it was ignored. Press Sign in to try again.</p>}
         </section>
       )}
 

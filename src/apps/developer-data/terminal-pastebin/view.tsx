@@ -6,7 +6,7 @@ import { useLocalState } from '@/lib/useLocalState';
 import { guess, highlight, LANGS } from '../code-snapshot-studio/highlight';
 import { EXPIRY, isLocked, pack, unpack, type Paste } from './paste';
 
-const TONE: Record<string, string> = { kw: '#6fcf97', str: '#e5c07b', com: '#7d7a6e', num: '#e08a6a', fn: '#B49A57', pun: '#a79f8d', type: '#9fd0e6', txt: '#F2E4CE' };
+const TONE: Record<string, string> = { kw: '#6fcf97', str: '#e5c07b', com: '#7d7a6e', num: '#e08a6a', fn: '#B49A57', pun: '#a79f8d', type: '#9fd0e6', txt: '#FBF6EC' };
 function Code({ body, lang }: { body: string; lang: string }) {
   const lines = useMemo(() => highlight(body.replace(/\t/g, '  '), lang === 'auto' ? guess(body) : lang), [body, lang]);
   return <pre className="tp-code code" tabIndex={0}>{lines.map((l, i) => <div key={i} className="cs-line"><span className="cs-ln" style={{ color: '#5d5a50' }}>{i + 1}</span><span>{l.length ? l.map((t, j) => <span key={j} style={{ color: TONE[t.t] }}>{t.v}</span>) : '​'}</span></div>)}</pre>;

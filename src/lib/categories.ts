@@ -12,10 +12,10 @@ export const categoryBySlug = (slug: string) => categories.find((c) => c.slug ==
 
 /** The colours of each group. The same values are in globals.css as [data-g] rules; the tab icon and share cards read them from here. */
 export const GROUP_COLOURS: Record<GroupKey | 'home', { bg: string; fg: string; sh: string }> = {
-  home: { bg: '#171717', fg: '#F2E4CE', sh: '#171717' },
-  text: { bg: '#337957', fg: '#F2E4CE', sh: '#1A4934' },
-  file: { bg: '#B94A2C', fg: '#F2E4CE', sh: '#6E2A15' },
-  prod: { bg: '#2F5D9E', fg: '#F2E4CE', sh: '#1B3760' },
-  dev: { bg: '#6B4FA0', fg: '#F2E4CE', sh: '#3F2D66' },
+  home: { bg: '#171717', fg: '#FBF6EC', sh: '#171717' },
+  text: { bg: '#337957', fg: '#FBF6EC', sh: '#1A4934' },
+  file: { bg: '#B94A2C', fg: '#FBF6EC', sh: '#6E2A15' },
+  prod: { bg: '#2F5D9E', fg: '#FBF6EC', sh: '#1B3760' },
+  dev: { bg: '#6B4FA0', fg: '#FBF6EC', sh: '#3F2D66' },
   biz: { bg: '#D9A524', fg: '#171717', sh: '#85600F' },
 };

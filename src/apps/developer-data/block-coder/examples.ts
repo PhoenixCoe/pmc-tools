@@ -36,7 +36,7 @@ export const EXAMPLE_GROUPS: { id: ExampleGroup; name: string }[] = [
 ];
 export interface Example { id: string; name: string; blurb: string; group: ExampleGroup; graph: Graph }
 
-const INK = '#171717', GOLD = '#b49a57', GREEN = '#337957', CREAM = '#f2e4ce';
+const INK = '#171717', GOLD = '#b49a57', GREEN = '#337957', CREAM = '#fbf6ec';
 const BTN: Params = { bg: GOLD, color: INK, bold: 'yes', space: 'medium', border: 'thick', round: 'a little', shadow: 'hard' };
 const BIGBTN: Params = { ...BTN, size: 'giant', round: 'pill', space: 'large' };
 const TITLE: Params = { font: 'headline', size: 'huge', align: 'centre' };
