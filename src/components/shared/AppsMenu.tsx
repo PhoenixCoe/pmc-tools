@@ -27,7 +27,7 @@ export function AppsMenu({ groupKey, currentKey, currentSlug, onClose }: { group
         ))}
       </div>
       <div className="am-apps" id="am-panel" role="tabpanel" aria-labelledby={`am-t-${g.key}`} data-g={g.key}>
-        <div className="am-head"><h2 className="d">{g.name}</h2><Link className="am-all tx" href={`/${g.slug}`} onClick={onClose}>See this group on its own page</Link></div>
+        <div className="am-head"><h2 className="d">{g.name}</h2></div>
         <ul>
           {g.apps.map((a) => (
             <li key={a.slug}>

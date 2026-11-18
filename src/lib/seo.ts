@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import type { AppMeta } from './types';
-import { categories, categoryBySlug } from './categories';
 
 export const SITE = process.env.SITE_URL ?? 'https://tools.pmcstudios.uk';
 /** The name in every tab title: the home page is "PMC Tools", every other page is "Page Name - PMC Tools". */
@@ -29,7 +28,6 @@ export function appMetadata(m: AppMeta): Metadata {
 
 /** WebApplication + BreadcrumbList, emitted together on every app route. */
 export function appJsonLd(m: AppMeta) {
-  const cat = categoryBySlug(m.category);
   const url = appUrl(m);
   return [
     {
@@ -53,9 +51,8 @@ export function appJsonLd(m: AppMeta) {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Apps', item: SITE },
-        { '@type': 'ListItem', position: 2, name: cat?.name ?? m.category, item: pageUrl(m.category) },
-        { '@type': 'ListItem', position: 3, name: m.title, item: url },
+        { '@type': 'ListItem', position: 1, name: 'PMC Tools', item: SITE },
+        { '@type': 'ListItem', position: 2, name: m.title, item: url },
       ],
     },
   ];
@@ -79,8 +76,5 @@ export function homeJsonLd(list: AppMeta[]) {
       numberOfItems: list.length,
       itemListElement: list.map((m, i) => ({ '@type': 'ListItem', position: i + 1, name: m.title, url: appUrl(m) })),
     },
-    ...categories.map((c) => ({
-      '@context': 'https://schema.org', '@type': 'CollectionPage', name: c.name, description: c.blurb, url: pageUrl(c.slug),
-    })),
   ];
 }

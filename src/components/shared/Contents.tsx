@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { GroupEntry } from '@/registry';
-import { AppIcon, UiIcon } from './icons';
+import { AppIcon } from './icons';
 
 type Row = { slug: string; href: string; title: string; tagline: string };
 
@@ -29,7 +29,7 @@ export function GroupBand({ g, id }: { g: GroupEntry; id: string }) {
     <section className="bd" data-g={g.key} aria-labelledby={id}>
       <div className="wrap bd-in">
         <div className="bd-h">
-          <h2 id={id} className="d"><Link href={`/${g.slug}`}>{g.short}<UiIcon name="arrow" size={40} strokeWidth={3.2} /></Link></h2>
+          <h2 id={id} className="d">{g.short}</h2>
           <p className="tx">{g.blurb}</p>
           <span className="bd-n tx">{g.apps.length} tools</span>
         </div>

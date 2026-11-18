@@ -126,9 +126,6 @@ body { background: var(--paper); }
 .bd :focus-visible { outline: 4px solid var(--bf); outline-offset: -6px; }
 .bd-in { display: grid; grid-template-columns: minmax(230px, 330px) minmax(0, 1fr); gap: clamp(22px, 4vw, 64px); align-items: start; padding-block: clamp(32px, 4.6vw, 60px); }
 .bd-h h2 { font-size: clamp(4.6rem, 9vw, 8rem); line-height: 0.8; margin-left: -0.03em; }
-.bd-h h2 a { display: inline-flex; align-items: center; gap: 0.1em; }
-.bd-h h2 svg { width: 0.42em; height: 0.42em; flex: none; transition: transform 0.12s var(--x); }
-.bd-h h2 a:hover svg { transform: translateX(0.14em); }
 .bd-h p { margin-top: 16px; font-size: 1.15rem; line-height: 1.3; max-width: 22ch; }
 .bd-n { display: inline-block; margin-top: 16px; padding: 4px 9px; background: var(--bf); color: var(--gc); font-size: 0.9rem; line-height: 1.2; }
 .bd-try .bd-h h2 { font-size: clamp(3.2rem, 5.4vw, 4.6rem); }
@@ -156,13 +153,6 @@ body { background: var(--paper); }
 .bd-more p { font-size: 1.2rem; margin-right: auto; }
 .bd-more .btn { background: var(--g1); color: #fff; border-color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
 .bd-more .btn:hover { background: var(--ink); }
-
-/* A group's own page: the whole page is the group's colour */
-.cat { flex: 1; overflow: hidden; }
-.ht-ink { color: var(--gs); opacity: 0.55; z-index: 0; }
-.cat-in { position: relative; z-index: 1; display: flex; flex-direction: column; gap: clamp(22px, 3.4vw, 44px); padding-block: clamp(26px, 4vw, 52px) clamp(36px, 5vw, 68px); }
-.cat-h h1 { font-size: clamp(4.4rem, 11.5vw, 9.6rem); line-height: 0.82; margin-left: -0.03em; }
-.cat-h p { margin-top: 16px; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.3; }
 
 /* ---------- Tool title: a slim band in the group's colour ---------- */
 .tt { background: var(--gc); color: var(--gf); --bf: var(--gf); }
@@ -253,7 +243,6 @@ html[data-embed] .tb, html[data-embed] .tt, html[data-embed] .faqs, html[data-em
   .tb-ic { width: 56px; height: 56px; }
   .tb-t h1 { font-size: clamp(3rem, 15vw, 4.4rem); }
   .tb-t p { font-size: 1.05rem; }
-  .cat-h h1 { font-size: clamp(3.6rem, 16vw, 5.6rem); }
   .set-tab span { display: none; }
   .set-tab[aria-selected='true'] span { display: inline; }
   .set-tab { padding: 6px 12px; }
