@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "utm-link-builder",
   title: "UTM Link Builder",
   description: "Add UTM parameters to links, shorten them and export to CSV.",
-  tagline: "Add UTM tags to links",
+  tagline: "Tracking links",
   keywords: ["utm link builder","utm","link","builder"],
   mode: "local",
   faq: [

@@ -2,12 +2,12 @@
 import { useEffect, useState } from 'react';
 import type { AppEntry } from '@/registry';
 import { useApps } from './AppsContext';
-import { Plate } from './Contents';
+import { Roll } from './Contents';
 
 const hash = (s: string) => { let h = 7; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; };
 
 /**
- * Four small plates at the end of an app page: the one before, the one after, and two others. Each says "Try" and the app's name.
+ * A band at the end of an app page with four more tools: the one before, the one after, and two others.
  * The two others are fixed when the page is built (so the links are always in the page), then shuffled in your browser each visit.
  */
 export function TryRow({ slug }: { slug: string }) {
@@ -31,10 +31,12 @@ export function TryRow({ slug }: { slug: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug, n]);
   if (i < 0 || !prev || !next) return null;
-  const plates = [prev, next, ...extra];
   return (
-    <section className="try" aria-label="Try next">
-      <Plate id="try-title" title="Try next" neutral mixed cols={2} rows={plates} />
+    <section className="bd bd-try" aria-labelledby="try-title">
+      <div className="wrap bd-in">
+        <div className="bd-h"><h2 id="try-title" className="d">Try next</h2></div>
+        <Roll rows={[prev, next, ...extra]} />
+      </div>
     </section>
   );
 }

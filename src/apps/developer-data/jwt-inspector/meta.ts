@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "jwt-inspector",
   title: "JWT Inspector",
   description: "Decode JWT headers and payloads, check expiry and verify a secret.",
-  tagline: "Read JWT tokens",
+  tagline: "JWT tokens",
   keywords: ["jwt inspector","jwt","inspector"],
   mode: "local",
   faq: [

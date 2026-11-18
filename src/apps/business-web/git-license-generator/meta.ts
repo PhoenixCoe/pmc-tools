@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "git-license-generator",
   title: "Git & License Generator",
   description: "Generate a .gitignore for your stack and add an MIT, Apache or GPL licence.",
-  tagline: ".gitignore and licences",
+  tagline: ".gitignore & licences",
   keywords: ["git & license generator","git","license","generator"],
   mode: "local",
   faq: [

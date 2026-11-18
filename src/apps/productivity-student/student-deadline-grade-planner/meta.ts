@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "student-deadline-grade-planner",
   title: "Student Deadline & Grade Planner",
   description: "Plan coursework, count down to deadlines and work out what grades you need.",
-  tagline: "Plan deadlines and grades",
+  tagline: "Deadlines & grades",
   keywords: ["student deadline & grade planner","student","deadline","grade","planner"],
   mode: "local",
   faq: [

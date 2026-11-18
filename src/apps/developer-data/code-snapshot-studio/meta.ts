@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "code-snapshot-studio",
   title: "Code Snapshot Studio",
   description: "Turn code into a shareable card with syntax themes and window controls, exported as PNG.",
-  tagline: "Code as a picture",
+  tagline: "Code images",
   keywords: ["code snapshot studio","code","snapshot","studio"],
   mode: "local",
   faq: [

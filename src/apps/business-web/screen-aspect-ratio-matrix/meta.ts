@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "screen-aspect-ratio-matrix",
   title: "Screen & Aspect Ratio Matrix",
   description: "Scale resolutions between aspect ratios with device presets.",
-  tagline: "Scale screen sizes",
+  tagline: "Screen sizes",
   keywords: ["screen & aspect ratio matrix","screen","aspect","ratio","matrix"],
   mode: "local",
   faq: [

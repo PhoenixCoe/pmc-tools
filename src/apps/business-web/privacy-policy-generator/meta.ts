@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "privacy-policy-generator",
   title: "Privacy Policy Generator",
   description: "Draft a privacy policy for a website, SaaS product or mobile app.",
-  tagline: "Draft a privacy policy",
+  tagline: "Privacy policies",
   keywords: ["privacy policy generator","privacy","policy","generator"],
   mode: "local",
   faq: [

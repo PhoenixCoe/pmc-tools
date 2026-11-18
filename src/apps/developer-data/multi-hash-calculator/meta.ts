@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "multi-hash-calculator",
   title: "Multi-Hash Calculator",
   description: "Hash text or files with MD5, SHA-1, SHA-256 and SHA-512 at the same time.",
-  tagline: "Hash text and files",
+  tagline: "MD5 & SHA",
   keywords: ["multi-hash calculator","multi","hash","calculator"],
   mode: "local",
   faq: [

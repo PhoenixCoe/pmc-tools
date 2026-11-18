@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "email-signature-designer",
   title: "Email Signature Designer",
   description: "Design an HTML email signature with social icons and copy the code.",
-  tagline: "Design an email signature",
+  tagline: "Email signatures",
   keywords: ["email signature designer","email","signature","designer"],
   mode: "local",
   faq: [

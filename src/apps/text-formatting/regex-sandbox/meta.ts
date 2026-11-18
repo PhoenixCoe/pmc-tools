@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "regex-sandbox",
   title: "RegEx Sandbox",
   description: "Test regular expressions live, see capture groups, get a plain-English explanation and use the quick reference.",
-  tagline: "Test regular expressions",
+  tagline: "Test regex",
   keywords: ["regex tester","regular expression tester","regex online","regex quick reference","test regex","regex explainer","javascript regex"],
   seoTitle: "Regex Tester: test patterns with plain-English help",
   seoDescription: "Free online regex tester. Try a regular expression on your own text, see every match highlighted, and read what the pattern does in plain English.",

@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "image-resizer",
   title: "Image Resizer",
   description: "Resize many images at once with locked aspect ratio, exact crops and quality compression.",
-  tagline: "Resize many images",
+  tagline: "Resize images",
   keywords: ["image resizer","bulk image resizer","resize photos online","compress images online","resize images for web","change image size","batch resize"],
   seoTitle: "Image Resizer: resize many images at once, free",
   seoDescription: "Free bulk image resizer. Resize, crop and compress photos in your browser, keep the shape, rename the files and download them all as one ZIP.",

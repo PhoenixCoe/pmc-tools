@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "gif-animation-builder",
   title: "GIF & Animation Builder",
   description: "Turn video clips or image sequences into GIFs with per-frame delays and palette tuning.",
-  tagline: "Make GIFs",
+  tagline: "GIFs",
   keywords: ["gif & animation builder","gif","animation","builder"],
   mode: "local",
   faq: [

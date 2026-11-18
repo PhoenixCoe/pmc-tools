@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "webhook-inspector-replayer",
   title: "Webhook Inspector & Replayer",
   description: "Read a webhook request, check its signature, edit it and send it again.",
-  tagline: "Inspect and resend webhooks",
+  tagline: "Webhooks",
   keywords: ["webhook inspector & replayer","webhook","inspector","replayer"],
   mode: "local",
   faq: [

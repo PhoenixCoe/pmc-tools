@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "pdf-page-manager",
   title: "PDF Page Manager",
   description: "Drag pages to extract, reorder, rotate, split and merge PDF documents.",
-  tagline: "Reorder and split PDFs",
+  tagline: "Move & split pages",
   keywords: ["pdf page manager","pdf","page","manager"],
   mode: "local",
   faq: [

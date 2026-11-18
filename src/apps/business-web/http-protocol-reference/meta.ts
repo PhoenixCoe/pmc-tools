@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "http-protocol-reference",
   title: "HTTP Protocol Reference & Checker",
   description: "Search every HTTP status code with plain explanations and fixes.",
-  tagline: "HTTP status codes",
+  tagline: "Status codes",
   keywords: ["http protocol reference & checker","http","protocol","reference"],
   mode: "local",
   faq: [

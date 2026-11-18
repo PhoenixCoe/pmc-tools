@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "json-formatter-repair",
   title: "JSON Formatter & Repair",
   description: "Validate, format and repair JSON, including trailing commas, with a collapsible tree.",
-  tagline: "Format and fix JSON",
+  tagline: "Format & fix JSON",
   keywords: ["json formatter","json validator","fix broken json","json beautifier","json repair online","json pretty print","trailing comma json"],
   seoTitle: "JSON Formatter & Validator: fix broken JSON online",
   seoDescription: "Free JSON formatter and validator. Pretty-print JSON, find errors, and repair common problems like trailing commas, with a tree you can fold.",

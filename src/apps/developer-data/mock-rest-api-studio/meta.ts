@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "mock-rest-api-studio",
   title: "Mock REST API Studio",
   description: "Make pretend endpoints with fake data, status codes and delays, then export the code.",
-  tagline: "Fake API endpoints",
+  tagline: "Fake APIs",
   keywords: ["mock rest api studio","mock","rest","api","studio"],
   mode: "local",
   faq: [

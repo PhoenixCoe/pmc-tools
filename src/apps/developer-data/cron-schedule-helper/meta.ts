@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "cron-schedule-helper",
   title: "Cron Schedule Helper",
   description: "Build a cron expression visually, read it in plain English and see the next run times.",
-  tagline: "Build cron schedules",
+  tagline: "Cron times",
   keywords: ["cron schedule helper","cron","schedule","helper"],
   mode: "local",
   faq: [

@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "password-engine",
   title: "Password Engine",
   description: "Generate strong passwords with entropy ratings, character options and leak warnings.",
-  tagline: "Make strong passwords",
+  tagline: "Passwords",
   keywords: ["password engine","password","engine"],
   mode: "network",
   faq: [

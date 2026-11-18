@@ -14,7 +14,7 @@ import { groupList, searchIndex } from '@/registry';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: { default: SITE_NAME, template: `%s - ${SITE_NAME}` },
-  description: `${searchIndex.length} small tools for text, files, study, code and the web. No sign-up, no install.`,
+  description: `${searchIndex.length} free tools for text, files, study, code and websites. No account needed.`,
   openGraph: { siteName: SITE_NAME, type: 'website' },
   icons: { icon: [{ url: '/favicon.ico', sizes: '48x48' }, { url: '/favicon.svg', type: 'image/svg+xml' }], apple: '/apple-touch-icon.png' },
 };

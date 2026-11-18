@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "code-formatter",
   title: "Code Formatter",
   description: "Clean up JavaScript, TypeScript, HTML, CSS, Python and SQL with your own indentation rules and syntax error flags.",
-  tagline: "Tidy up code",
+  tagline: "Tidy code",
   keywords: ["code formatter","online code beautifier","format javascript online","format sql online","format css online","python formatter","html beautifier"],
   seoTitle: "Code Formatter: JavaScript, HTML, CSS, Python, SQL",
   seoDescription: "Free online code formatter. Tidy JavaScript, TypeScript, HTML, CSS, Python and SQL with your own indent rules, and see syntax problems flagged.",

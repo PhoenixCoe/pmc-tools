@@ -33,7 +33,7 @@ export function MobileMenu({ currentKey, currentSlug, onClose, accountLink }: { 
         );
       })}
       <div className="mm-x">
-        <Link href="/suggest" onClick={onClose}>Suggest an app</Link>
+        <Link href="/suggest" onClick={onClose}>Suggest a tool</Link>
         <Link href="/settings" onClick={onClose}>Settings</Link>
         {accountLink}
       </div>

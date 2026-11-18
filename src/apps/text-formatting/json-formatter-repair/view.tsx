@@ -68,7 +68,7 @@ export default function View() {
         </div>
       </div>
 
-      {!analysis ? <div className="empty">Paste JSON above. It is checked, repaired if needed, and formatted instantly.</div> : (
+      {!analysis ? <div className="empty">Paste JSON above. It gets checked and tidied here.</div> : (
         <>
           {analysis.value === undefined ? (
             <p className="note err" role="alert"><strong>This can&rsquo;t be read as JSON.</strong> Line {analysis.error!.line}, column {analysis.error!.column}: {analysis.error!.message}.{analysis.failure ? ` Repair also failed: ${analysis.failure}.` : ''}</p>

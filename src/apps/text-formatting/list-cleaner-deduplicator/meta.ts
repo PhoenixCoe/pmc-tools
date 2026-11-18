@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "list-cleaner-deduplicator",
   title: "List Cleaner & Deduplicator",
   description: "Remove duplicate lines, trim whitespace, toggle case sensitivity and see how often each item appears.",
-  tagline: "Remove duplicate lines",
+  tagline: "Remove duplicates",
   keywords: ["remove duplicate lines","deduplicate list online","list cleaner","sort list alphabetically","remove blank lines","duplicate remover"],
   seoTitle: "Remove Duplicate Lines: list cleaner and sorter",
   seoDescription: "Free online duplicate line remover. Paste a list to delete repeats, trim spaces, sort it, and see how many times each item appeared.",

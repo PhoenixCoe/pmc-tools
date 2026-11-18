@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "pixel-art-maker",
   title: "Pixel Art Maker",
   description: "Draw sprites on a fullscreen grid with custom palettes and onion skinning.",
-  tagline: "Draw pixel sprites",
+  tagline: "Pixel art",
   keywords: ["pixel art maker","pixel","art","maker"],
   mode: "local",
   heavy: true,

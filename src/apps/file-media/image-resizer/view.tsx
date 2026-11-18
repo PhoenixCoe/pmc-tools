@@ -181,7 +181,7 @@ export default function View() {
         <SettingsDrawer label="More options" title="More options">
           <div className="field"><label htmlFor="ir-n">File names</label><input id="ir-n" type="text" className="code" value={s.pattern} onChange={(e) => set('pattern', e.target.value)} spellCheck={false} /><p>Use {'{name}'}, {'{w}'} and {'{h}'}. Example result: {outName('holiday.jpg', 800, 600, 'jpg', s.pattern)}</p></div>
           <div className="field"><label htmlFor="ir-b">Background for transparent areas (JPEG)</label><ColorPicker id="ir-b" value={s.background} onChange={(v) => set('background', v)} label="Background colour" /></div>
-          <p className="note">Saving through the browser removes camera details such as location and camera model. Rotation from the camera is applied first, so photos stay the right way up.</p>
+          <p className="note">Camera details like location are removed when you save. Photos keep their right way up.</p>
         </SettingsDrawer>
       </div>
 
@@ -195,7 +195,7 @@ export default function View() {
             <figure className={pvBusy ? 'busy' : ''}><div className="pv-img">{pv ? <img src={pv.url} alt="Your image after resizing, as it will be saved" /> : <span className="hintx">Working</span>}</div>
               <figcaption><b className="d">After</b><span>{pv ? `${pv.w} by ${pv.h} · ${formatBytes(pv.bytes)} (${pv.bytes <= target.file.size ? '-' : '+'}${Math.abs(Math.round((1 - pv.bytes / target.file.size) * 100))}%)` : 'Working'}</span></figcaption></figure>
           </div>
-        ) : <p className="pv-empty">Add an image and you will see here exactly what the settings above do to it, before you save anything.</p>}
+        ) : <p className="pv-empty">Add an image to see the result here before you save.</p>}
         {items.length > 1 && target && <p className="hintx pv-pick">Showing {target.file.name}. Press Preview on another image below to see that one.</p>}
       </div>
 
@@ -231,7 +231,7 @@ export default function View() {
             );
           })}
         </ul>
-      ) : <div className="empty">Nothing added yet. Your images stay on this device and are never uploaded.</div>}
+      ) : <div className="empty">No images yet. They stay on this device.</div>}
     </div>
   );
 }

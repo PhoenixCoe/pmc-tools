@@ -1,11 +1,11 @@
 import type { Category, GroupKey } from './types';
 
 export const categories: Category[] = [
-  { slug: 'text-formatting', key: 'text', name: 'Text & Formatting', blurb: 'Clean up, convert, compare and format text and code.', short: 'Text' },
-  { slug: 'file-media', key: 'file', name: 'File & Media', blurb: 'Convert, shrink and edit images, audio, PDFs and vectors.', short: 'Files' },
-  { slug: 'productivity-student', key: 'prod', name: 'Productivity & Student', blurb: 'Timers, planners, revision tools and everyday utilities.', short: 'Study' },
-  { slug: 'developer-data', key: 'dev', name: 'Developer & Data', blurb: 'Encoders, inspectors, generators and visual builders.', short: 'Dev' },
-  { slug: 'business-web', key: 'biz', name: 'Business & Web', blurb: 'Meta tags, contrast, sitemaps, schema and design scales.', short: 'Web' },
+  { slug: 'text-formatting', key: 'text', name: 'Text & Formatting', blurb: 'Change text, tidy code, compare two texts.', short: 'Text' },
+  { slug: 'file-media', key: 'file', name: 'File & Media', blurb: 'Pictures, sound, PDFs and other files.', short: 'Files' },
+  { slug: 'productivity-student', key: 'prod', name: 'Productivity & Student', blurb: 'Timers, planners, flashcards and everyday helpers.', short: 'Study' },
+  { slug: 'developer-data', key: 'dev', name: 'Developer & Data', blurb: 'Encode, decode, check and generate.', short: 'Dev' },
+  { slug: 'business-web', key: 'biz', name: 'Business & Web', blurb: 'For your website and your business.', short: 'Web' },
 ];
 
 export const categoryBySlug = (slug: string) => categories.find((c) => c.slug === slug);

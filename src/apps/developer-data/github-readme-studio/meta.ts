@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "github-readme-studio",
   title: "GitHub README Studio",
   description: "Drag section blocks, tech badges and stats into place and render a clean README.md live.",
-  tagline: "Build a README",
+  tagline: "README files",
   keywords: ["github readme studio","github","readme","studio"],
   mode: "local",
   fullscreen: true,

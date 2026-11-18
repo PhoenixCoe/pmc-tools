@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "faq-schema-builder",
   title: "FAQ Schema Builder",
   description: "Build an FAQ accordion and get the HTML plus valid FAQPage JSON-LD.",
-  tagline: "FAQ markup builder",
+  tagline: "FAQ markup",
   keywords: ["faq schema builder","faq","schema","builder"],
   mode: "local",
   faq: [

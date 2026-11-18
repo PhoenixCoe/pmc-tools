@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "env-file-validator",
   title: "Env File Validator",
   description: "Parse .env files, find missing keys and syntax errors, remove duplicates and tidy the format.",
-  tagline: "Check .env files",
+  tagline: ".env files",
   keywords: ["env file validator","env","file","validator"],
   mode: "local",
   faq: [

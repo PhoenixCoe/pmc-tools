@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "svg-vector-studio",
   title: "SVG Vector Studio",
   description: "Clean SVG code, trim path precision, strip metadata and generate React or Vue icon components.",
-  tagline: "Clean up SVG",
+  tagline: "SVG cleanup",
   keywords: ["svg vector studio","svg","vector","studio"],
   mode: "local",
   faq: [

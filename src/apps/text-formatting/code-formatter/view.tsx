@@ -88,7 +88,7 @@ export default function View() {
         <CodeBox title="Formatted" text={text} empty={result && !result.ok ? 'Fix the problem below to see the result.' : 'The formatted code appears here.'} />
       </div>
 
-      {lang === 'python' && <p className="note">Python is tidied rather than rewritten: indentation, trailing spaces and blank lines are fixed and common mistakes are flagged. Line wrapping and quote style are left alone.</p>}
+      {lang === 'python' && <p className="note">Python gets tidier indents, spaces and blank lines, and common mistakes are flagged. Line wrapping and quotes are left as they are.</p>}
 
       {issues.length > 0 && (
         <section aria-label="Problems found" style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>

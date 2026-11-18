@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "terminal-pastebin",
   title: "Terminal Pastebin",
   description: "Share text and code as a link, with syntax colours, an expiry date and an optional password.",
-  tagline: "Share text as a link",
+  tagline: "Share text",
   keywords: ["terminal pastebin","terminal","pastebin"],
   mode: "local",
   faq: [

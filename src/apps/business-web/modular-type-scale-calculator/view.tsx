@@ -5,7 +5,7 @@ import { Select } from '@/components/shared/Select';
 import { Seg } from '@/components/shared/Segmented';
 import { useLocalState } from '@/lib/useLocalState';
 
-const RATIOS: [string, number][] = [['Minor second — 1.067', 1.067], ['Major second — 1.125', 1.125], ['Minor third — 1.2', 1.2], ['Major third — 1.25', 1.25], ['Perfect fourth — 1.333', 1.333], ['Augmented fourth — 1.414', 1.414], ['Perfect fifth — 1.5', 1.5], ['Golden ratio — 1.618', 1.618]];
+const RATIOS: [string, number][] = [['Minor second: 1.067', 1.067], ['Major second: 1.125', 1.125], ['Minor third: 1.2', 1.2], ['Major third: 1.25', 1.25], ['Perfect fourth: 1.333', 1.333], ['Augmented fourth: 1.414', 1.414], ['Perfect fifth: 1.5', 1.5], ['Golden ratio: 1.618', 1.618]];
 const NAMES = ['xs', 'sm', 'base', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl'];
 type Out = 'css' | 'scss' | 'tailwind';
 const r = (n: number) => +n.toFixed(3);

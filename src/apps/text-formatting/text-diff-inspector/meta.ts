@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "text-diff-inspector",
   title: "Text Diff Inspector",
   description: "Compare two texts by character or by line, side by side, and export a .patch file.",
-  tagline: "Compare two texts",
+  tagline: "Compare text",
   keywords: ["text diff","compare two texts","diff checker online","text compare tool","find differences between two texts","patch file generator"],
   seoTitle: "Text Diff Checker: compare two texts side by side",
   seoDescription: "Free online text compare tool. Paste two versions to see every change, by line or by character, side by side. Download the result as a .patch file.",

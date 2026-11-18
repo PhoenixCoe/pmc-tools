@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "habit-heatmap-tracker",
   title: "Habit Heatmap Tracker",
   description: "Log habits and see a year-long activity heatmap, streaks and backups.",
-  tagline: "Track habits",
+  tagline: "Habits",
   keywords: ["habit heatmap tracker","habit","heatmap","tracker"],
   mode: "local",
   faq: [

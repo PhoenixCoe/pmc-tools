@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 
 /**
- * The title block at the top of a page: a plain paper field, the name in big capitals, one short line, and the halftone in the corner.
- * Give it a picture (a glyph in a coloured tile) when the page has one.
+ * The title at the top of a plain page (Settings, Privacy, Suggest): a flat green field, the name in huge capitals, one short line.
+ * Give it a picture (a glyph) when the page has one.
  */
 export function Band({ title, line, icon }: { title: string; line?: string; icon?: ReactNode; g?: string; tone?: 'ink' | 'gold' | 'cream'; back?: boolean }) {
   return (

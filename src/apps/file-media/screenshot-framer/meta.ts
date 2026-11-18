@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "screenshot-framer",
   title: "Screenshot Framer",
   description: "Wrap screenshots in device frames, desktop windows and padding for portfolios.",
-  tagline: "Put screenshots in frames",
+  tagline: "Screenshot frames",
   keywords: ["screenshot framer","screenshot","framer"],
   mode: "local",
   faq: [

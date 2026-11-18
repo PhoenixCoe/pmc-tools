@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "media-converter",
   title: "Media Converter",
   description: "Convert PNG, JPEG, WEBP, AVIF, MP3, WAV and OGG files in your browser with WebAssembly.",
-  tagline: "Convert images and audio",
+  tagline: "Convert files",
   keywords: ["media converter","media","converter"],
   mode: "local",
   heavy: true,

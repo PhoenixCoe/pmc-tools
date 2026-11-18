@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "favicon-generator",
   title: "Favicon Generator",
   description: "Create a full favicon package (PNGs, ICO, Apple Touch icon and site.webmanifest) in one click.",
-  tagline: "Make a favicon set",
+  tagline: "Favicons",
   keywords: ["favicon generator","favicon","generator"],
   mode: "local",
   faq: [

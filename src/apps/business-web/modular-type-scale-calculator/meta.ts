@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "modular-type-scale-calculator",
   title: "Modular Type Scale Calculator",
   description: "Compute a type scale from a ratio and export it for your layouts.",
-  tagline: "Type size scales",
+  tagline: "Type sizes",
   keywords: ["modular type scale calculator","modular","type","scale","calculator"],
   mode: "local",
   faq: [

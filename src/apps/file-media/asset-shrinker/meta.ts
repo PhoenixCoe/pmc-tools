@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "asset-shrinker",
   title: "Asset Shrinker",
   description: "Compress SVG, PNG and sprite sheets without losing quality, with a before and after slider.",
-  tagline: "Make files smaller",
+  tagline: "Smaller files",
   keywords: ["asset shrinker","asset","shrinker"],
   mode: "local",
   faq: [

@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "word-readability-analyzer",
   title: "Word & Readability Analyzer",
   description: "Count words, characters, sentences and paragraphs, score readability and see keyword density.",
-  tagline: "Count words, score reading",
+  tagline: "Word count",
   keywords: ["word counter","character counter","readability checker","flesch reading ease","flesch-kincaid grade level","keyword density checker","sentence counter"],
   seoTitle: "Word Counter & Readability Checker: free, instant",
   seoDescription: "Free word counter and readability checker. Count words, characters, sentences and paragraphs, get Flesch reading ease and grade level, and see keyword density.",

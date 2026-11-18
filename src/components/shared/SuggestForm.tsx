@@ -16,8 +16,8 @@ export function SuggestForm() {
     const body = encodeURIComponent('What it should do:\n\n\nAn example of using it:\n');
     return (
       <div className="suggest-form">
-        <p className="tx">This copy of the site has no server to send from, so your own mail app will do it.</p>
-        <a className="btn primary" href={`mailto:${MAIL}?subject=${encodeURIComponent('App idea: ')}&body=${body}`}>Email {MAIL}</a>
+        <p className="tx">This opens your email app to send it.</p>
+        <a className="btn primary" href={`mailto:${MAIL}?subject=${encodeURIComponent('Tool idea: ')}&body=${body}`}>Email {MAIL}</a>
       </div>
     );
   }
@@ -27,7 +27,7 @@ export function SuggestForm() {
     try {
       const res = await fetch(ENDPOINT, {
         method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' },
-        body: JSON.stringify({ ...f, _subject: `App idea: ${f.app}`, message: f.what }),
+        body: JSON.stringify({ ...f, _subject: `Tool idea: ${f.app}`, message: f.what }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) { setError(data.error ?? `That did not send. You can email ${MAIL} instead.`); setState('idle'); return; }
@@ -39,7 +39,7 @@ export function SuggestForm() {
     return (
       <div className="suggest-done" role="status">
         <h2 className="d">Sent</h2>
-        <p className="tx">Thanks. We read every idea{f.email ? ' and will write back if we build it' : ''}.</p>
+        <p className="tx">Thanks, got it.{f.email ? ' We will write back if we build it.' : ''}</p>
         <button type="button" className="btn" onClick={() => { setF({ app: '', what: '', example: '', email: '', website: '' }); setState('idle'); }}>Suggest another</button>
       </div>
     );
@@ -48,7 +48,7 @@ export function SuggestForm() {
   return (
     <form className="suggest-form" onSubmit={submit}>
       <div className="field">
-        <label htmlFor="s-app">App name</label>
+        <label htmlFor="s-app">Tool name</label>
         <input id="s-app" type="text" required maxLength={100} value={f.app} onChange={set('app')} placeholder="Subtitle Timing Fixer" />
       </div>
       <div className="field">

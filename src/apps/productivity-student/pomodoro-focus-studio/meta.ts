@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "pomodoro-focus-studio",
   title: "Timer",
   description: "Set a timer, run a stopwatch with laps, count down to a date, or use a focus timer with breaks.",
-  tagline: "Timer, stopwatch and countdown",
+  tagline: "Timer & stopwatch",
   keywords: ["timer","pomodoro","focus","studio"],
   mode: "local",
   faq: [

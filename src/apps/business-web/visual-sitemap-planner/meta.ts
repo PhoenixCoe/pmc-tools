@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "visual-sitemap-planner",
   title: "Visual Sitemap Planner",
   description: "Map a website on a fullscreen canvas and export an XML sitemap.",
-  tagline: "Plan a site map",
+  tagline: "Site maps",
   keywords: ["visual sitemap planner","visual","sitemap","planner"],
   mode: "local",
   fullscreen: true,

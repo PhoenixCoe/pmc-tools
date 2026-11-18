@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "base64-studio",
   title: "Base64 Studio",
   description: "Encode and decode Base64 and data URIs with instant image, SVG and audio previews.",
-  tagline: "Encode and decode Base64",
+  tagline: "Encode & decode",
   keywords: ["base64 studio","base64","studio"],
   mode: "local",
   faq: [

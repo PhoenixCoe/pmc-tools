@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "invoice-builder",
   title: "Invoice Builder",
   description: "Build line-item invoices with tax, discounts and your logo, then download a PDF.",
-  tagline: "Make an invoice PDF",
+  tagline: "Invoices",
   keywords: ["invoice builder","invoice","builder"],
   mode: "local",
   faq: [

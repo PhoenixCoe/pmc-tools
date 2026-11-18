@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "block-coder",
   title: "Block Coder",
   description: "Make games, toys, tools and real web pages by joining blocks with wires. 155 blocks and 50 projects to play with.",
-  tagline: "Build with blocks",
+  tagline: "Code with blocks",
   keywords: ["block coding online","visual programming online","make a game with blocks","no code web page builder","learn to code for kids and beginners","html css javascript builder","flow based programming","block based coding"],
   seoTitle: "Block Coder: make games, toys and web pages with blocks",
   seoDescription: "Free block coder you can play with, a bit like Scratch with wires. Join 155 blocks to make games, drawing boards, quizzes and real web pages. 50 projects to start from. No typing needed.",

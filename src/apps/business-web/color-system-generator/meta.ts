@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "color-system-generator",
   title: "Color System Generator",
   description: "Build a 50 to 900 colour scale from one hex colour and export CSS variables.",
-  tagline: "Colour scales from one hex",
+  tagline: "Colour shades",
   keywords: ["color system generator","color","system","generator"],
   mode: "local",
   faq: [

@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "multi-tally-counter",
   title: "Multi-Tally Counter",
   description: "Run several counters with custom steps, hotkeys 1 to 9, sound and CSV logs.",
-  tagline: "Count with hotkeys",
+  tagline: "Counters",
   keywords: ["multi-tally counter","multi","tally","counter"],
   mode: "local",
   faq: [

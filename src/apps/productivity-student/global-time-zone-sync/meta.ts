@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "global-time-zone-sync",
   title: "Global Time Zone Sync",
   description: "Compare cities on one timeline and find slots that suit everyone.",
-  tagline: "Compare time zones",
+  tagline: "Time zones",
   keywords: ["global time zone sync","global","time","zone","sync"],
   mode: "local",
   faq: [

@@ -7,7 +7,7 @@ import { SITE } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Privacy',
-  description: 'What PMC Tools keeps, where it keeps it, and what it never sees.',
+  description: 'What PMC Tools keeps and what it never sees.',
   alternates: { canonical: `${SITE}/privacy` },
 };
 
@@ -23,29 +23,29 @@ export default function Privacy() {
         <div className="panel"><ul className="decisions">
           <li>
             <Tile n="file" /><h2 className="d">Your text and files</h2>
-            <p className="tx">Whatever you type, paste or open in an app is worked on inside your browser. It is not sent to PMC Tools. If an app asks for a web address (a picture in Block Coder, say), your browser asks that website for it, and that website can see the request.</p>
+            <p className="tx">What you type, paste or open stays in your browser. We never get it. If a tool loads something from a web address, like a picture, your browser asks that site for it.</p>
           </li>
           <li>
             <Tile n="device" /><h2 className="d">Saved on your device</h2>
-            <p className="tx">PMC Tools remembers a few things in your browser so you do not have to set them again: your settings (text size, loading screen, animations), the apps you opened lately, and work-in-progress in some apps. It stays on this device. <Link href="/settings"><u>Settings</u></Link> has a button that clears all of it.</p>
+            <p className="tx">Your settings, the tools you opened lately and some unfinished work are remembered on this device only. <Link href="/settings"><u>Settings</u></Link> has a button that clears all of it.</p>
           </li>
           <li>
             <Tile n="unseen" /><h2 className="d">Adverts and tracking</h2>
-            <p className="tx">There are no adverts and no analytics or tracking scripts in PMC Tools, and the fonts are served from the site itself. Like any website, whoever hosts it may keep ordinary server logs, such as your IP address and the pages requested.</p>
+            <p className="tx">No adverts and no tracking. The fonts come from this site. Whoever hosts the site may keep normal server logs, like your IP address and the pages you asked for.</p>
           </li>
           {ACCOUNTS && (
             <li>
               <Tile n="user" /><h2 className="d">Accounts</h2>
-              <p className="tx">An account is optional. You sign in with a PMC ID, on its own page (accounts.pmcstudios.uk), so PMC Tools never sees your password. When you come back, this browser keeps your name, email address and picture so it can show who is signed in, and your account notes that you used PMC Tools (the site name and a time). Sign out takes them off this device.</p>
+              <p className="tx">You don't need an account. If you sign in, you do it on PMC ID, so PMC Tools never sees your password. This browser keeps your name, email and picture to show who is signed in, and PMC ID notes that you used PMC Tools. Signing out clears them from this device.</p>
             </li>
           )}
           <li>
             <Tile n="idea" /><h2 className="d">Suggestions</h2>
-            <p className="tx">If you send a suggestion, the app name, your description and the email address you choose to add (it is optional) are emailed to ideas@pmcstudios.uk. We use the email only to tell you if the app gets built.</p>
+            <p className="tx">A suggestion goes to ideas@pmcstudios.uk with your description, and your email if you add one. We only use the email to tell you if we build it.</p>
           </li>
           <li>
-            <Tile n="mail" /><h2 className="d">Asking about any of this</h2>
-            <p className="tx">Email <a href="mailto:ideas@pmcstudios.uk"><u>ideas@pmcstudios.uk</u></a>. Last updated 12 November 2026.</p>
+            <Tile n="mail" /><h2 className="d">Questions</h2>
+            <p className="tx">Email <a href="mailto:ideas@pmcstudios.uk"><u>ideas@pmcstudios.uk</u></a>. Updated 12 November 2026.</p>
           </li>
         </ul></div>
       </section></div>

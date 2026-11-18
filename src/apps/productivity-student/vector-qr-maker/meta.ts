@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "vector-qr-maker",
   title: "Vector QR Maker",
   description: "Make SVG QR codes with a logo, custom dot and corner shapes and vector downloads.",
-  tagline: "Make QR codes",
+  tagline: "QR codes",
   keywords: ["vector qr maker","vector","qr","maker"],
   mode: "local",
   faq: [

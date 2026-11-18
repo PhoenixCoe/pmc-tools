@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "social-meta-tag-previewer",
   title: "Social Meta Tag Previewer",
   description: "Preview Open Graph and Twitter cards and copy the matching meta tags.",
-  tagline: "Preview social cards",
+  tagline: "Social previews",
   keywords: ["social meta tag previewer","social","meta","tag","previewer"],
   mode: "local",
   faq: [

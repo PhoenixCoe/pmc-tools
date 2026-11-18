@@ -9,28 +9,27 @@ import { homeJsonLd } from '@/lib/seo';
 import { apps, groupList, searchIndex } from '@/registry';
 
 /** The common jobs, said the way a person would say them. Each one goes straight to its tool. */
-const JOBS: [string, string, string][] = [
-  ['Fix some text', 'Change the case, clean it up', 'case-converter'],
-  ['Make a picture smaller', 'Resize and shrink', 'image-resizer'],
-  ['Make a QR code', 'For a link, a Wi-Fi or a card', 'vector-qr-maker'],
-  ['Remove a background', 'Cut a picture out', 'background-remover'],
-  ['Make a password', 'Strong and easy to say', 'password-engine'],
-  ['Change a PDF', 'Move, split and join pages', 'pdf-page-manager'],
-  ['Start a timer', 'Focus and break', 'pomodoro-focus-studio'],
-  ['Tidy some code', 'Format and check it', 'code-formatter'],
+const JOBS: [string, string][] = [
+  ['Fix some text', 'case-converter'],
+  ['Make a picture smaller', 'image-resizer'],
+  ['Make a QR code', 'vector-qr-maker'],
+  ['Remove a background', 'background-remover'],
+  ['Make a password', 'password-engine'],
+  ['Change a PDF', 'pdf-page-manager'],
+  ['Start a timer', 'pomodoro-focus-studio'],
+  ['Tidy some code', 'code-formatter'],
 ];
 
 export default function Home() {
   const ready = apps.filter((a) => a.built);
-  const jobs = JOBS.map(([say, , slug]) => ({ say, a: searchIndex.find((x) => x.slug === slug) })).filter((j): j is { say: string; a: (typeof searchIndex)[number] } => !!j.a);
+  const jobs = JOBS.map(([say, slug]) => ({ say, a: searchIndex.find((x) => x.slug === slug) })).filter((j): j is { say: string; a: (typeof searchIndex)[number] } => !!j.a);
   return (
     <>
       <section className="cv" aria-labelledby="start-title">
         <div className="ht" aria-hidden><i /><i /><i /></div>
         <div className="wrap cv-in">
-          <img className="cv-mark" src="/logo-tools.svg" alt="" width={240} height={240} aria-hidden />
           <h1 id="start-title" className="cv-h d">PMC Tools</h1>
-          <p className="cv-sub tx">{ready.length} free tools for text, pictures, homework, code and your website. Nothing to sign up for, nothing to install.</p>
+          <p className="cv-sub d">{ready.length} free tools. No account needed.</p>
           <AppSearch variant="hero" />
           <div className="cv-jobsw">
             <p className="cv-lab d">Common jobs</p>
@@ -41,12 +40,10 @@ export default function Home() {
               <li><Surprise hrefs={searchIndex.map((a) => a.href)} /></li>
             </ul>
           </div>
+          <RecentList apps={searchIndex.map((a) => ({ slug: a.slug, title: a.title, href: a.href }))} />
         </div>
       </section>
-      <div className="wrap body">
-        <RecentList apps={searchIndex.map((a) => ({ slug: a.slug, title: a.title, href: a.href }))} />
-        <Contents groups={groupList} />
-      </div>
+      <Contents groups={groupList} />
       <JsonLd data={homeJsonLd(ready)} />
     </>
   );

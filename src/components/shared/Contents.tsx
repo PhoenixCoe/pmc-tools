@@ -1,43 +1,56 @@
 import Link from 'next/link';
 import type { GroupEntry } from '@/registry';
-import { AppIcon, UiIcon, type UiName } from './icons';
+import { AppIcon, UiIcon } from './icons';
 
-type Row = { slug: string; href: string; title: string; tagline: string; key?: string; ui?: UiName };
+type Row = { slug: string; href: string; title: string; tagline: string };
 
 /**
- * One framed plate: a title bar in the group's colour, then its tools as plain rows (a small drawing, the name, what it does).
- * `cols` lays the rows out in 2 or 3 columns on a wide screen. With no title there is no bar (a group's own page already says the name).
- * `mixed` is for a list that holds tools from several groups: each row then takes its own group's colour.
+ * A plain list of tools: a small picture, the name, and what it does in a few words.
+ * It takes its colours from the band it sits in, so it works on every group colour.
  */
-export function Plate({ title, g, href, count, rows, cols = 1, id, mixed, neutral }: { title?: string; g?: string; href?: string; count?: number; rows: Row[]; cols?: 1 | 2 | 3; id?: string; mixed?: boolean; neutral?: boolean }) {
+export function Roll({ rows, cols = 2, label }: { rows: Row[]; cols?: 2 | 3; label?: string }) {
   return (
-    <section className={`cp cols-${cols}${neutral ? ' neutral' : ''}`} data-g={g} aria-labelledby={title ? id : undefined} aria-label={title ? undefined : 'Tools'}>
-      {title && (
-        <header className="cp-h">
-          <h2 id={id} className="d">{href ? <Link href={href}>{title}</Link> : title}</h2>
-          {count != null && <span className="cp-n">{count}</span>}
-        </header>
-      )}
-      <ul className="cp-l">
-        {rows.map((a) => (
-          <li key={a.slug} data-g={mixed ? a.key : undefined}>
-            <Link href={a.href} className="cp-a">
-              <span className={`ic${a.ui ? ' ic-ui' : ''}`}>{a.ui ? <UiIcon name={a.ui} size={26} /> : <AppIcon slug={a.slug} size={46} still />}</span>
-              <span><b className="d">{a.title}</b><small className="tx">{a.tagline}</small></span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <ul className={`rl-l rl-${cols}`} aria-label={label}>
+      {rows.map((a) => (
+        <li key={a.slug}>
+          <Link href={a.href} className="rl">
+            <span className="rl-ic"><AppIcon slug={a.slug} size={52} still /></span>
+            <span className="rl-t"><b className="d">{a.title}</b><small className="tx">{a.tagline}</small></span>
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** A full-width band in one group's colour: the group's name on the left, its tools on the right. */
+export function GroupBand({ g, id }: { g: GroupEntry; id: string }) {
+  return (
+    <section className="bd" data-g={g.key} aria-labelledby={id}>
+      <div className="wrap bd-in">
+        <div className="bd-h">
+          <h2 id={id} className="d"><Link href={`/${g.slug}`}>{g.short}<UiIcon name="arrow" size={40} strokeWidth={3.2} /></Link></h2>
+          <p className="tx">{g.blurb}</p>
+          <span className="bd-n tx">{g.apps.length} tools</span>
+        </div>
+        <Roll rows={g.apps} label={g.name} />
+      </div>
     </section>
   );
 }
 
-/** Every tool, as five plates. Everything is in the page, so search engines and "find in page" see every tool. */
+/** The home page: every tool, one band per group. Everything is in the page, so search engines and "find in page" see every tool. */
 export function Contents({ groups }: { groups: GroupEntry[] }) {
   return (
-    <div className="cts">
-      {groups.map((g) => <Plate key={g.key} id={`g-${g.key}`} g={g.key} title={g.name} href={`/${g.slug}`} count={g.apps.length} rows={g.apps} />)}
-      <Plate id="g-more" title="Missing one?" neutral rows={[{ slug: 'suggest', href: '/suggest', title: 'Suggest a tool', tagline: 'Tell us what you need', ui: 'idea' }]} />
-    </div>
+    <>
+      {groups.map((g) => <GroupBand key={g.key} g={g} id={`g-${g.key}`} />)}
+      <section className="bd bd-more" aria-labelledby="g-more">
+        <div className="wrap bd-more-in">
+          <h2 id="g-more" className="d">Need another?</h2>
+          <p className="tx">Tell us which tool is missing.</p>
+          <Link href="/suggest" className="btn">Suggest a tool</Link>
+        </div>
+      </section>
+    </>
   );
 }

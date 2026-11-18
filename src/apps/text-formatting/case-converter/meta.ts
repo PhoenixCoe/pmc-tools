@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "case-converter",
   title: "Case Converter",
   description: "Convert text to upper, lower, title (AP or Chicago), camelCase, snake_case and kebab-case, with your own regex delimiter.",
-  tagline: "Change text case",
+  tagline: "Text case",
   keywords: ["case converter","title case converter","uppercase to lowercase","camelCase converter","snake_case converter","kebab-case","AP title case","Chicago title case"],
   seoTitle: "Case Converter: UPPER, lower, Title Case, camelCase",
   seoDescription: "Free online case converter. Change text to uppercase, lowercase, AP or Chicago title case, camelCase, snake_case or kebab-case. Nothing is uploaded.",

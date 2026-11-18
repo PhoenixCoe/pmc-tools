@@ -27,7 +27,7 @@ export function appMetadata(m: AppMeta): Metadata {
   };
 }
 
-/** WebApplication + FAQPage + BreadcrumbList, emitted together on every app route. */
+/** WebApplication + BreadcrumbList, emitted together on every app route. */
 export function appJsonLd(m: AppMeta) {
   const cat = categoryBySlug(m.category);
   const url = appUrl(m);
@@ -48,11 +48,6 @@ export function appJsonLd(m: AppMeta) {
       isAccessibleForFree: true,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'GBP' },
       publisher: { '@type': 'Organization', name: 'PMC Studios', url: 'https://pmcstudios.uk' },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: m.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
     },
     {
       '@context': 'https://schema.org',

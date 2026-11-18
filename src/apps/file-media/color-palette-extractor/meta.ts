@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "color-palette-extractor",
   title: "Color & Palette Extractor",
   description: "Pull dominant colours from an image, check WCAG contrast and export HEX, RGB or CSS variables.",
-  tagline: "Colours from an image",
+  tagline: "Image colours",
   keywords: ["color & palette extractor","color","palette","extractor"],
   mode: "local",
   faq: [

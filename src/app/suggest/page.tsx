@@ -5,16 +5,16 @@ import { SuggestForm } from '@/components/shared/SuggestForm';
 import { SITE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Suggest an App',
-  description: 'Tell us which small tool you wish existed. Every idea goes to the PMC Studios inbox.',
+  title: 'Suggest a Tool',
+  description: 'Tell us which tool you want us to make.',
   alternates: { canonical: `${SITE}/suggest` },
 };
 
 export default function Suggest() {
   return (
     <>
-      <Band title="Suggest an app" tone="gold" icon={<UiIcon name="idea" size={40} />} />
-      <div className="wrap body"><section className="sec suggest" aria-label="Suggest an app"><SuggestForm /></section></div>
+      <Band title="Suggest a tool" tone="gold" icon={<UiIcon name="idea" size={40} />} />
+      <div className="wrap body"><section className="sec suggest" aria-label="Suggest a tool"><SuggestForm /></section></div>
     </>
   );
 }

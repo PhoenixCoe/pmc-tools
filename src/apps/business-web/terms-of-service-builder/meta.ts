@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "terms-of-service-builder",
   title: "Terms of Service Builder",
   description: "Assemble terms of service from clauses for billing, user content and liability.",
-  tagline: "Build terms of service",
+  tagline: "Terms of service",
   keywords: ["terms of service builder","terms","of","service","builder"],
   mode: "local",
   faq: [

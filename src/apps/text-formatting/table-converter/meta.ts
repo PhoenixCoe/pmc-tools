@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "table-converter",
   title: "Table Converter",
   description: "Turn CSV, TSV or plain text into Markdown, HTML and LaTeX tables.",
-  tagline: "CSV to Markdown or HTML",
+  tagline: "CSV to tables",
   keywords: ["csv to markdown table","csv to html table","csv to latex table","tsv to markdown","markdown table generator","table converter online"],
   seoTitle: "Table Converter: CSV to Markdown, HTML and LaTeX",
   seoDescription: "Free table converter. Paste CSV, TSV or a Markdown table and get a Markdown, HTML or LaTeX table back, with column alignment you control.",

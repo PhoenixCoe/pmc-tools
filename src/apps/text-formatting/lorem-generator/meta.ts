@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "lorem-generator",
   title: "Lorem Generator",
   description: "Generate placeholder text in Latin, tech startup, legal or medical styles.",
-  tagline: "Placeholder text",
+  tagline: "Dummy text",
   keywords: ["lorem ipsum generator","placeholder text","dummy text generator","filler text","lorem ipsum paragraphs","sample text generator"],
   seoTitle: "Lorem Ipsum Generator: placeholder text in 4 styles",
   seoDescription: "Free lorem ipsum generator. Make placeholder paragraphs, sentences or words in classic Latin, tech startup, legal or medical style, then copy them.",

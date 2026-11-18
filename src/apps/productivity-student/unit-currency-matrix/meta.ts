@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "unit-currency-matrix",
   title: "Unit & Currency Matrix",
   description: "Convert length, mass, temperature, data size, speed and live currency rates.",
-  tagline: "Convert units and money",
+  tagline: "Units & currency",
   keywords: ["unit & currency matrix","unit","currency","matrix"],
   mode: "network",
   faq: [

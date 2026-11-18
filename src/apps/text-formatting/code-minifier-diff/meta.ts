@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "code-minifier-diff",
   title: "Code Minifier & Diff",
   description: "Strip whitespace and comments, see the bytes saved live, and compare before and after side by side.",
-  tagline: "Shrink code, compare changes",
+  tagline: "Minify & compare",
   keywords: ["code minifier","minify javascript online","minify css online","minify html","compress code","reduce file size code","minified vs original"],
   seoTitle: "Code Minifier: shrink JS, CSS and HTML, see the diff",
   seoDescription: "Free online minifier. Strip whitespace and comments from JavaScript, CSS, HTML or JSON, see exactly how many bytes you saved, and see what was removed.",

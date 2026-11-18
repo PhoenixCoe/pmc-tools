@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "uuid-ulid-generator",
   title: "UUID & ULID Generator",
   description: "Generate v4 and v7 UUIDs and ULIDs in bulk, decode timestamps and export arrays.",
-  tagline: "Make UUIDs and ULIDs",
+  tagline: "UUIDs & ULIDs",
   keywords: ["uuid & ulid generator","uuid","ulid","generator"],
   mode: "local",
   faq: [

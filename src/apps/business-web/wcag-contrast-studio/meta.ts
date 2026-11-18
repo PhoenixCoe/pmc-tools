@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "wcag-contrast-studio",
   title: "WCAG Contrast Studio",
   description: "Check colour pairs against WCAG AA and AAA with live component previews.",
-  tagline: "Check colour contrast",
+  tagline: "Colour contrast",
   keywords: ["wcag contrast studio","wcag","contrast","studio"],
   mode: "local",
   faq: [

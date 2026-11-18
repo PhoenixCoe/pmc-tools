@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "slug-generator",
   title: "Slug Generator",
   description: "Turn any title into a URL-safe slug with stop-word removal, transliteration and an SEO length check.",
-  tagline: "Make URL slugs",
+  tagline: "URL slugs",
   keywords: ["slug generator","url slug generator","seo friendly url","permalink generator","remove accents from text","slugify online"],
   seoTitle: "Slug Generator: make a clean URL from any title",
   seoDescription: "Free slug generator. Turn a title into a short, URL-safe slug. Removes accents and stop words, and checks the length for search engines.",

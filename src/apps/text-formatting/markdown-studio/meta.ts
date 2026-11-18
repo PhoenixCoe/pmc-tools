@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "markdown-studio",
   title: "Markdown Studio",
   description: "Write Markdown with a live HTML preview and LaTeX maths, then export to PDF or MD.",
-  tagline: "Write Markdown, see it live",
+  tagline: "Markdown preview",
   keywords: ["markdown editor","markdown preview online","markdown to html","markdown to pdf","online markdown viewer","write markdown online"],
   seoTitle: "Markdown Editor: live preview, copy HTML, save PDF",
   seoDescription: "Free online Markdown editor with live preview. Write Markdown, copy the HTML, download a .md file or save the page as a PDF. Nothing is uploaded.",

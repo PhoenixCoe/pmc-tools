@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "flashcard-revision-studio",
   title: "Flashcard Revision Studio",
   description: "Build flashcard decks and revise with flip-to-recall mode.",
-  tagline: "Flashcards to revise",
+  tagline: "Flashcards",
   keywords: ["flashcard revision studio","flashcard","revision","studio"],
   mode: "local",
   faq: [

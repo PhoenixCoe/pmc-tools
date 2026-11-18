@@ -6,7 +6,7 @@ export const meta: AppMeta = {
   slug: "audio-trimmer-looper",
   title: "Audio Trimmer & Looper",
   description: "Cut audio on a live waveform, normalise volume and loop playback.",
-  tagline: "Cut and loop audio",
+  tagline: "Cut & loop audio",
   keywords: ["audio trimmer & looper","audio","trimmer","looper"],
   mode: "local",
   faq: [
