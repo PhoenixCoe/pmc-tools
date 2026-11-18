@@ -60,7 +60,7 @@ export function Shell({ children, data }: { children: React.ReactNode; data: App
     <AppsProvider value={data}>
       <div className="site">
         <a className="skip d" href="#main">Skip to the content</a>
-        {!bare && <SiteBar home={home} path={path} currentKey={currentKey} currentSlug={currentSlug} />}
+        {!bare && <SiteBar currentKey={currentKey} />}
         <main id="main" className="main" tabIndex={-1}>{children}</main>
         {!bare && <SiteFooter />}
       </div>

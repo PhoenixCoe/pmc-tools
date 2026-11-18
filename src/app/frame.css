@@ -37,38 +37,6 @@ body { background: var(--paper); }
 .chev { width: 9px; height: 9px; border-width: 3px; }
 
 /* ---------- The black bar across the top: logo, group links, search, settings, the PMC apps button and the account picture ---------- */
-.topbar { position: sticky; top: 0; z-index: 60; height: var(--bar); background: var(--ink); color: var(--cream); border: 0; }
-.topbar :focus-visible { outline: 4px solid var(--gold); outline-offset: -7px; }
-.isl { display: flex; align-items: stretch; height: 100%; max-width: calc(1200px + 2 * var(--gut)); margin-inline: auto; padding-inline: var(--gut); }
-.isl-b, .isl-cell, .isl-title { color: var(--cream); background: none; border-left: 3px solid #3b3b3b; transition: background-color 0.1s, color 0.1s; }
-.isl-b, .isl-cell { flex: none; display: grid; place-items: center; width: 56px; }
-.isl-b:hover, .isl-title:hover, .isl-title.on, .isl-b.on, .isl-b[aria-expanded='true'] { background: var(--cream); color: var(--ink); }
-.isl-b:active { background: var(--gold); color: var(--ink); transition-duration: 0.04s; }
-.isl .isl-b:hover, .isl .isl-title:hover { transform: none !important; }
-.isl-logo { display: flex; align-items: center; gap: 12px; width: auto; padding: 0 22px 0 0; border-left: 0; }
-.isl-logo:hover { background: none; color: var(--gold); }
-.isl-mark { display: block; width: 44px; height: 44px; }
-.isl-name { font-size: 1.5rem; line-height: 1; letter-spacing: 0.02em; }
-.isl-groups { display: flex; align-items: stretch; }
-.isl-g { display: flex; align-items: center; gap: 9px; padding: 0 16px; font-family: var(--d); text-transform: uppercase; font-size: 1.2rem; letter-spacing: 0.02em; line-height: 1; white-space: nowrap; color: var(--cream); background: none; border-left: 3px solid #3b3b3b; cursor: pointer; transition: background-color 0.1s, color 0.1s; }
-.isl-sq { flex: none; width: 11px; height: 11px; background: var(--gc); border: 2px solid var(--cream); }
-.isl-g:hover, .isl-g.on { background: var(--gc); color: var(--gf); }
-.isl-g:hover .isl-sq, .isl-g.on .isl-sq { background: var(--gf); border-color: var(--gf); }
-.isl-g.cur { box-shadow: inset 0 -5px 0 var(--gc); }
-.isl-g.cur:hover, .isl-g.cur.on { box-shadow: none; }
-.isl-set { color: var(--cream); }
-.isl-title { display: flex; align-items: center; gap: 10px; padding: 0 20px; font-family: var(--d); text-transform: uppercase; font-size: 1.3rem; letter-spacing: 0.02em; line-height: 1; white-space: nowrap; cursor: pointer; }
-.isl-search { flex: 1; min-width: 180px; display: flex; align-items: center; padding: 0 18px; border-left: 3px solid #3b3b3b; }
-.isl-search .as { width: 100%; }
-.isl-sp { display: block; flex: 1; border-left: 3px solid #3b3b3b; }
-.isl-burger, .isl-sm { display: none; }
-.isl-cell { width: auto; min-width: 58px; padding: 0 8px; }
-.isl-by { display: grid; place-items: center; }
-.isl .pb-btn, .isl .pa-btn { width: 40px; height: 40px; margin: 0; box-shadow: none; border: 2px solid var(--cream); color: var(--cream); background: transparent; }
-.isl .pb-btn:hover, .isl .pb-btn[aria-expanded=true] { background: var(--cream); color: var(--ink); box-shadow: none; transform: none !important; }
-.isl .pa-btn { background: var(--pa-cbg, var(--gold)); color: var(--pa-cfg, var(--ink)); }
-.isl .pa-btn:hover, .isl .pa-btn[aria-expanded=true], .isl .pa-btn:focus-visible { box-shadow: 3px 3px 0 var(--cream); transform: none !important; }
-.isl-sheet { position: absolute; top: 100%; left: 0; right: 0; padding: 12px var(--gut) 16px; background: var(--ink); border-top: 3px solid #3b3b3b; }
 
 /* ---------- Search ---------- */
 .as-box { color: var(--ink); }
@@ -76,7 +44,6 @@ body { background: var(--paper); }
 .as-bar .as-box { height: 42px; padding: 0 14px; background: transparent; color: var(--cream); border: 2px solid var(--cream); font-size: 1.1rem; transition: background 0.1s; }
 .as-bar .as-box:focus-within { background: var(--paper); color: var(--ink); }
 .as-bar .as-drop { top: calc(100% + 12px); right: auto; width: min(560px, calc(100vw - 28px)); }
-.isl-sheet .as-bar .as-drop { top: calc(100% + 12px); width: 100%; }
 .as-hero { width: 100%; max-width: 760px; }
 .as-hero .as-box { height: 64px; padding: 0 20px; background: var(--paper); color: var(--ink); border: 3px solid var(--ink); box-shadow: 6px 6px 0 var(--g2); font-size: 1.25rem; transition: box-shadow 0.1s var(--x), transform 0.1s var(--x); }
 .as-hero .as-box:focus-within { box-shadow: 8px 8px 0 var(--g1); transform: translate(-1px, -1px); }
@@ -206,10 +173,8 @@ html[data-embed] .tb, html[data-embed] .tt, html[data-embed] .faqs, html[data-em
 
 /* ---------- Narrow screens ---------- */
 @media (max-width: 1080px) {
-  .isl-groups { display: none; }
 }
 @media (min-width: 1081px) {
-  .isl-desk { display: none; }
 }
 @media (max-width: 960px) {
   .bd-in { grid-template-columns: minmax(0, 1fr); gap: 18px; }
@@ -221,14 +186,6 @@ html[data-embed] .tb, html[data-embed] .tt, html[data-embed] .faqs, html[data-em
 }
 @media (max-width: 800px) {
   :root { --bar: 60px; }
-  .isl-desk, .isl-search, .isl-groups, .isl-set { display: none; }
-  .isl-burger, .isl-sm { display: grid; width: 52px; }
-  .isl-logo { padding: 0 14px 0 0; gap: 9px; margin-right: auto; }
-  .isl-mark { width: 38px; height: 38px; }
-  .isl-name { font-size: 1.3rem; }
-  .isl-cell { min-width: 52px; padding: 0 6px; }
-  .isl .pb-btn, .isl .pa-btn { width: 36px; height: 36px; }
-  .isl-sp { display: none; }
   .cv { padding-top: 14px; }
   .cv-h { font-size: clamp(4rem, 21vw, 6.4rem); }
   .cv-sub { font-size: 1.45rem; }
@@ -256,3 +213,16 @@ html[data-embed] .tb, html[data-embed] .tt, html[data-embed] .faqs, html[data-em
 }
 @media (prefers-reduced-motion: reduce) { .am, .mm, .as-drop { animation: none; } }
 html[data-motion='calm'] .am, html[data-motion='calm'] .mm { animation: none; }
+
+/* ---------- The top of every page: the logo and the account picture, nothing behind them ---------- */
+.topbar { position: static; z-index: 60; background: transparent; color: var(--ink); border: 0; height: auto; }
+.topbar :focus-visible { outline: 4px solid var(--g1); outline-offset: 4px; }
+.tbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 88px; padding-block: 16px 6px; }
+.tbar-logo { display: flex; align-items: center; gap: 14px; color: var(--ink); }
+.tbar-logo img { display: block; width: 52px; height: 52px; }
+.tbar-logo b { font: 400 2.2rem/1 var(--d); text-transform: uppercase; letter-spacing: 0.02em; }
+.tbar-logo:hover b { text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 6px; }
+.topbar .pa-btn, .topbar .pb-btn { width: 44px; height: 44px; border: 3px solid var(--ink); color: var(--ink); }
+.topbar .pa-btn { background: var(--pa-cbg, var(--gold)); color: var(--pa-cfg, var(--ink)); box-shadow: 3px 3px 0 var(--ink); }
+.topbar .pa-btn:hover, .topbar .pa-btn[aria-expanded=true] { box-shadow: 5px 5px 0 var(--ink); }
+@media (max-width: 800px) { .tbar { min-height: 70px; padding-block: 12px 4px; } .tbar-logo img { width: 42px; height: 42px; } .tbar-logo b { font-size: 1.8rem; } .topbar .pa-btn { width: 40px; height: 40px; } }

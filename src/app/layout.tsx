@@ -6,6 +6,7 @@ import './frame.css';
 import { EmbedBridge } from '@/components/shared/EmbedBridge';
 import { IconMotion } from '@/components/shared/IconMotion';
 import { RangeStyler } from '@/components/shared/RangeStyler';
+import { ToggleFeel } from '@/components/shared/ToggleFeel';
 import { Shell } from '@/components/shared/Shell';
 import { PREFS_SCRIPT } from '@/lib/prefs';
 import { SITE, SITE_NAME } from '@/lib/seo';
@@ -27,6 +28,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB" data-lead="cream" suppressHydrationWarning>
       <head>
+        {/* The four small fonts every page needs, fetched with the page so the text never changes shape after it appears. */}
+        <link rel="preload" href="/fonts/PMCHeader.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/PMCFontUpright.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/PMCSymbolsL2.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/PMCSymbolsL4Upright.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         {/* Applies the saved choices (text size, loading screen, motion) before the first paint so the page never jumps. */}
         <script dangerouslySetInnerHTML={{ __html: PREFS_SCRIPT }} />
         {/* Opened inside another page (?embed=1): show only the tool, and skip the slow loading screen. */}
@@ -35,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Shell data={data}>{children}</Shell>
         <RangeStyler />
+        <ToggleFeel />
         <IconMotion />
         <EmbedBridge />
               <Script src="/js/pmc-logo.js" strategy="afterInteractive" />
