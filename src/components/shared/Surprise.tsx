@@ -6,8 +6,8 @@ import { UiIcon } from './icons';
 export function Surprise({ hrefs }: { hrefs: string[] }) {
   const r = useRouter();
   return (
-    <button type="button" className="surprise" onClick={() => r.push(hrefs[Math.floor(Math.random() * hrefs.length)])}>
-      <UiIcon name="idea" size={22} /><span className="d">Surprise me</span>
+    <button type="button" className="btn surprise" onClick={() => r.push(hrefs[Math.floor(Math.random() * hrefs.length)])}>
+      <UiIcon name="dice" size={20} />Surprise me
     </button>
   );
 }

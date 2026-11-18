@@ -19,13 +19,13 @@ export function RecentList({ apps }: { apps: { slug: string; title: string; href
   const list = slugs.map((s) => apps.find((a) => a.slug === s)).filter((a): a is NonNullable<typeof a> => !!a);
   if (!list.length) return null;
   return (
-    <section className="sec" aria-labelledby="recent-title">
-      <div className="top-row"><h2 id="recent-title" className="d">Pick up where you left off</h2></div>
-      <div className="recents">
+    <section className="recent" aria-labelledby="recent-title">
+      <h2 id="recent-title" className="sec-t">Pick up where you left off</h2>
+      <ul className="recents">
         {list.map((a) => (
-          <Link key={a.slug} href={a.href} className="rtile"><span className="pbox"><AppIcon slug={a.slug} size={44} /></span><span className="d">{a.title}</span></Link>
+          <li key={a.slug}><Link href={a.href} className="btn small"><span className="ic"><AppIcon slug={a.slug} size={24} still /></span>{a.title}</Link></li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

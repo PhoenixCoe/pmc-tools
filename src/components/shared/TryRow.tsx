@@ -1,9 +1,8 @@
 'use client';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { AppEntry } from '@/registry';
 import { useApps } from './AppsContext';
-import { AppIcon } from './icons';
+import { Plate } from './Contents';
 
 const hash = (s: string) => { let h = 7; for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; };
 
@@ -34,17 +33,8 @@ export function TryRow({ slug }: { slug: string }) {
   if (i < 0 || !prev || !next) return null;
   const plates = [prev, next, ...extra];
   return (
-    <section className="try" aria-label="More apps to try">
-      <ul>
-        {plates.map((a) => (
-          <li key={a.slug}>
-            <Link href={a.href} className="try-p gtone" data-g={a.key}>
-              <span className="try-t"><small>Try</small><b className="d">{a.title}</b></span>
-              <span className="ic"><AppIcon slug={a.slug} size={44} still /></span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <section className="try" aria-label="Try next">
+      <Plate id="try-title" title="Try next" neutral mixed cols={2} rows={plates} />
     </section>
   );
 }

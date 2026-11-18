@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { AppCell } from '@/components/shared/AppCell';
-import { Band } from '@/components/shared/Band';
+import { Plate } from '@/components/shared/Contents';
 import { categories, categoryBySlug } from '@/lib/categories';
 import { pageUrl } from '@/lib/seo';
 import { groupList } from '@/registry';
@@ -21,14 +20,16 @@ export default async function CategoryPage({ params }: P) {
   const g = groupList.find((x) => x.slug === c?.slug);
   if (!c || !g) notFound();
   return (
-    <div data-g={c.key}>
-      <Band title={c.name} line={c.blurb} g={c.key} />
+    <div data-g={c.key} className="gscope">
+      <header className="th">
+        <div className="ht ht-s" aria-hidden><i /><i /><i /></div>
+        <div className="wrap th-in">
+          <h1 className="th-t d">{c.name}</h1>
+          <p className="th-l tx">{c.blurb}</p>
+        </div>
+      </header>
       <div className="wrap body">
-        <section className="grp open" aria-label={`${c.name} apps`}>
-          <div className="grp-body">
-            {g.apps.map((a) => <AppCell key={a.slug} slug={a.slug} href={a.href} title={a.title} tagline={a.tagline} />)}
-          </div>
-        </section>
+        <Plate g={c.key} rows={g.apps} cols={3} />
       </div>
     </div>
   );

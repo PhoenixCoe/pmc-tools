@@ -1,7 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import Link from 'next/link';
 import { FaqAccordion } from '@/components/shared/FaqAccordion';
 import { AppIcon } from '@/components/shared/icons';
 import { JsonLd } from '@/components/shared/JsonLd';
@@ -10,7 +9,7 @@ import { TryRow } from '@/components/shared/TryRow';
 import { categoryBySlug } from '@/lib/categories';
 import { appJsonLd, appMetadata } from '@/lib/seo';
 import { UiIcon } from '@/components/shared/icons';
-import { getApp, groupList } from '@/registry';
+import { getApp } from '@/registry';
 
 export const appPageMetadata = (category: string, slug: string): Metadata => {
   const m = getApp(category, slug);
@@ -27,9 +26,9 @@ const NOTE = {
 } as const;
 
 /**
- * One app: a coloured band with its name, the tool, three questions, and four more apps to try.
- * The whole page carries its group's colour (data-g), so the tool's shadows and buttons take it too.
- * Chat-style apps (fullbleed) have no band: the tool fills the page under the top bar.
+ * One app: a slim title block (picture, name, one line), the tool right under it, then a short About with the data note,
+ * three questions and four more tools to try.
+ * Chat-style apps (fullbleed) have no title block: the tool fills the page under the island.
  */
 export function AppPage({ category, slug, children }: { category: string; slug: string; children: ReactNode }) {
   const m = getApp(category, slug);
@@ -45,55 +44,27 @@ export function AppPage({ category, slug, children }: { category: string; slug: 
           <section id="tool" className="bleed" aria-label={m.title}>{children}</section>
         </>
       ) : (
-        <header className="ahero">
-          <div className="wrap ahero-in">
-            <div className="ahero-row">
-              <span className="ahero-ic" aria-hidden><AppIcon slug={m.slug} size={96} still /></span>
-              <div className="ahero-t">
-                <h1 className="d">{m.title}</h1>
-                <p>{m.tagline}</p>
-              </div>
-            </div>
+        <header className="th">
+          <div className="ht ht-s" aria-hidden><i /><i /><i /></div>
+          <div className="wrap th-in">
+            <div className="th-plate"><span className="th-ic" aria-hidden><AppIcon slug={m.slug} size={64} still /></span><h1 className="th-t d">{m.title}</h1></div>
+            <p className="th-l tx">{m.tagline}</p>
           </div>
         </header>
       )}
       <div className="wrap body">
         {!m.fullbleed && <section id="tool" className="stage" aria-label={m.title}>{children}</section>}
         {!m.fullbleed && (
-          <section id="about" className="sec about" aria-labelledby="about-title">
-            <div className="sec-h"><h2 id="about-title" className="d">About this tool</h2></div>
-            <div className="about-grid">
-              <div className="panel about-main">
-                <p className="about-lead">{m.description}</p>
-                {m.features && m.features.length > 0 ? (
-                  <ul className="about-list">{m.features.map((f) => <li key={f}><UiIcon name="check" size={20} />{f}</li>)}</ul>
-                ) : (
-                  <ul className="about-tags" aria-label="Good for">{m.keywords.slice(0, 8).map((k) => <li key={k}>{k}</li>)}</ul>
-                )}
-              </div>
-              {note ? (
-                <aside className="panel about-data" aria-label="Your data">
-                  <h3 className="d"><UiIcon name="lock" size={22} />Your data</h3>
-                  <p className="tx">{note}</p>
-                </aside>
-              ) : null}
+          <section id="about" className="about" aria-labelledby="about-title">
+            <h2 id="about-title" className="sec-t">About this tool</h2>
+            <div className="panel about-p">
+              <p className="about-lead">{m.description}</p>
+              {note ? <p className="about-note tx"><UiIcon name="lock" size={18} />{note}</p> : null}
             </div>
           </section>
         )}
         {m.fullbleed && (m.note ?? NOTE[m.mode]) && <p className="fn tx">{m.note ?? NOTE[m.mode]}</p>}
         <FaqAccordion items={m.faq} />
-        {!m.fullbleed && (
-          <section id="more" className="sec more" aria-labelledby="more-title">
-            <div className="sec-h"><h2 id="more-title" className="d">More from {c.short}</h2></div>
-            <ul className="moreg">
-              {(groupList.find((g) => g.key === c.key)?.apps ?? []).filter((a) => a.slug !== m.slug).map((a) => (
-                <li key={a.slug}>
-                  <Link href={a.href} className="moreg-a"><span className="ic"><AppIcon slug={a.slug} size={40} still /></span><span className="moreg-t"><b className="d">{a.title}</b><small>{a.tagline}</small></span></Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        )}
         <TryRow slug={m.slug} />
       </div>
       <JsonLd data={appJsonLd(m)} />

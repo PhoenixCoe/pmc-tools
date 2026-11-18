@@ -1,4 +1,5 @@
-import { Pictogram } from './Pictogram';
+import { AppGlyph, Pictogram } from './Pictogram';
+export { AppGlyph };
 
 /** The picture for an app: a flat, hand-set pictogram that fills its frame. Small ones sit still until pointed at. */
 export function AppIcon({ slug, size = 48, still, className }: { slug: string; size?: number; still?: boolean; className?: string }) {

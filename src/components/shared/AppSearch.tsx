@@ -61,7 +61,7 @@ export function AppSearch({ variant, onDone, autoFocus = false }: { variant: 'he
         <UiIcon name="search" size={variant === 'hero' ? 24 : 18} />
         <input
           ref={input} data-appsearch="" type="search" value={q} autoComplete="off" spellCheck={false}
-          placeholder={`Search ${index.length} tools`} aria-label="Search tools"
+          placeholder={variant === 'hero' ? `Search ${index.length} tools or type a job` : `Search ${index.length} tools`} aria-label="Search tools"
           role="combobox" aria-expanded={showing && results.length > 0} aria-controls={listId} aria-autocomplete="list"
           aria-activedescendant={showing && results[sel] ? `${listId}-${sel}` : undefined}
           onFocus={() => setOpen(true)} onChange={(e) => { setQ(e.target.value); setOpen(true); }} onKeyDown={onKey}
@@ -77,7 +77,7 @@ export function AppSearch({ variant, onDone, autoFocus = false }: { variant: 'he
                   <Link href={r.href} className={`as-row${i === sel ? ' cur' : ''}`} data-g={r.key} onMouseEnter={() => setSel(i)} onClick={(e) => { e.preventDefault(); go(r.href); }}>
                     <span className="ic"><AppIcon slug={r.slug} size={40} still /></span>
                     <span className="as-t"><b>{r.title}</b><small className="tx">{r.tagline}</small></span>
-                    <em className="as-chip gtone">{r.short}</em>
+                    <em className="as-chip">{r.short}</em>
                   </Link>
                 </li>
               ))}

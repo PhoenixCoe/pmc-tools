@@ -33,6 +33,9 @@ const changed = () => { try { window.dispatchEvent(new Event(EVENT)); } catch { 
 
 /** Goes to PMC ID. A one-time value is made here and kept in this tab, and the way back is only accepted if it brings the same value. */
 export function startSignIn(where: 'signin' | 'create' = 'signin', back = ''): void {
+  const page = where === 'create' ? 'create/name' : 'signin';
+  /* With no sign in set up in this build there is nothing to carry back, but PMC ID still sends the person back here (and no token is put in the address). */
+  if (!ACCOUNTS_ON) { const path = /^\/(?![/\\])[A-Za-z0-9\-._~/]{0,200}$/.test(location.pathname) && !/^\/sign(in|up)\/?$/.test(location.pathname) ? location.pathname : '/'; location.assign(`${ACCOUNTS}/${page}/?from=${appId()}&path=${encodeURIComponent(path)}`); return; }
   const a = new Uint8Array(24); crypto.getRandomValues(a);
   const st = b64u(a);
   const here = /^\/sign(in|up)\/?$/.test(location.pathname) ? back : location.pathname + location.search;

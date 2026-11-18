@@ -568,20 +568,27 @@ const ICONS: Record<string, [Cat, (c: C) => ReactNode]> = {
   )],
 };
 
-/** Each app's picture is one PMC Icon on a block of its group colour. */
-const PMC_ICON: Record<string, string> = {"case-converter": "text", "code-formatter": "code", "code-minifier-diff": "cut", "json-formatter-repair": "wand", "list-cleaner-deduplicator": "list", "lorem-generator": "quote", "markdown-studio": "heading", "regex-sandbox": "filter", "slug-generator": "link", "table-converter": "table", "text-diff-inspector": "swap", "word-readability-analyzer": "book", "asset-shrinker": "archive", "audio-trimmer-looper": "wave", "background-remover": "clear", "color-palette-extractor": "theme", "favicon-generator": "badge", "gif-animation-builder": "play", "image-resizer": "crop", "media-converter": "video", "pdf-page-manager": "file", "pixel-art-maker": "panel", "screenshot-framer": "camera", "svg-vector-studio": "sketch", "email-signature-designer": "mail", "encrypted-scratchpad": "lock", "flashcard-revision-studio": "cards", "global-time-zone-sync": "globe", "habit-heatmap-tracker": "calendar", "invoice-builder": "newdoc", "multi-tally-counter": "plus", "password-engine": "key", "pomodoro-focus-studio": "timer", "student-deadline-grade-planner": "study", "unit-currency-matrix": "sigma", "vector-qr-maker": "qr", "base64-studio": "layers", "block-coder": "apps", "code-snapshot-studio": "image", "cron-schedule-helper": "clock", "env-file-validator": "shield", "github-readme-studio": "branch", "jwt-inspector": "eye", "mock-rest-api-studio": "cloud", "multi-hash-calculator": "command", "terminal-pastebin": "terminal", "uuid-ulid-generator": "dice", "webhook-inspector-replayer": "send", "color-system-generator": "highlight", "faq-schema-builder": "help", "git-license-generator": "medal", "http-protocol-reference": "inbox", "modular-type-scale-calculator": "expand", "privacy-policy-generator": "unseen", "screen-aspect-ratio-matrix": "device", "social-meta-tag-previewer": "share", "terms-of-service-builder": "note", "utm-link-builder": "tag", "visual-sitemap-planner": "map", "wcag-contrast-studio": "access"};
+/** The plain one-colour drawing of each app (used where the full animated picture would be too much). */
+const PMC_ICON: Record<string, string> = {"case-converter": "text", "code-formatter": "code", "code-minifier-diff": "cut", "json-formatter-repair": "wand", "list-cleaner-deduplicator": "list", "lorem-generator": "quote", "markdown-studio": "heading", "regex-sandbox": "filter", "slug-generator": "link", "table-converter": "table", "text-diff-inspector": "swap", "word-readability-analyzer": "book", "asset-shrinker": "archive", "audio-trimmer-looper": "wave", "background-remover": "clear", "color-palette-extractor": "theme", "favicon-generator": "badge", "gif-animation-builder": "play", "image-resizer": "crop", "media-converter": "video", "pdf-page-manager": "file", "pixel-art-maker": "panel", "screenshot-framer": "camera", "svg-vector-studio": "sketch", "email-signature-designer": "mail", "encrypted-scratchpad": "lock", "flashcard-revision-studio": "cards", "global-time-zone-sync": "globe", "habit-heatmap-tracker": "calendar", "invoice-builder": "newdoc", "multi-tally-counter": "plus", "password-engine": "key", "pomodoro-focus-studio": "timer", "student-deadline-grade-planner": "study", "unit-currency-matrix": "sigma", "vector-qr-maker": "qr", "base64-studio": "layers", "block-coder": "apps", "code-snapshot-studio": "image", "cron-schedule-helper": "clock", "env-file-validator": "shield", "github-readme-studio": "branch", "jwt-inspector": "eye", "mock-rest-api-studio": "cloud", "multi-hash-calculator": "command", "terminal-pastebin": "terminal", "uuid-ulid-generator": "dice", "webhook-inspector-replayer": "send", "color-system-generator": "highlight", "faq-schema-builder": "help", "git-license-generator": "medal", "http-protocol-reference": "inbox", "modular-type-scale-calculator": "expand", "privacy-policy-generator": "unseen", "screen-aspect-ratio-matrix": "device", "social-meta-tag-previewer": "share", "terms-of-service-builder": "note", "utm-link-builder": "tag", "visual-sitemap-planner": "map", "wcag-contrast-studio": "access", "suggest": "idea"};
 export function Pictogram({ slug, size = 48, still, className }: { slug: string; size?: number; still?: boolean; className?: string }) {
-  void still;
   const e = ICONS[slug];
   const c = PAL[e?.[0] ?? 'dev'];
-  const name = PMC_ICON[slug] ?? 'wrench';
-  const d = UI[name] ?? UI[ALIAS[name]] ?? '';
+  const quiet = still ?? size < 64;
   return (
-    <svg className={`pg${className ? ' ' + className : ''}`} width={size} height={size} viewBox="0 0 48 48" aria-hidden focusable="false">
+    <svg className={`pg${quiet ? ' still' : ''}${className ? ' ' + className : ''}`} width={size} height={size} viewBox="0 0 48 48" aria-hidden focusable="false">
       <rect width="48" height="48" fill={c.bg} />
-      <g transform="translate(9 9) scale(1.25)" fill="none" stroke={c.f} strokeWidth="2.4" strokeLinecap="square" strokeLinejoin="miter" strokeMiterlimit="1.5"><path d={d} /></g>
+      {e ? e[1](c) : <rect x="12" y="12" width="24" height="24" fill={c.f} {...ST} />}
     </svg>
   );
 }
 
 export const pictogramSlugs = Object.keys(ICONS);
+
+/** Just the drawing of an app, in the colour around it: for the coloured strips and small marks where the square tile would be too much. */
+export function AppGlyph({ slug, size = 32 }: { slug: string; size?: number }) {
+  const name = PMC_ICON[slug] ?? 'wrench';
+  const d = UI[name] ?? UI[ALIAS[name]] ?? '';
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="square" strokeLinejoin="miter" strokeMiterlimit="1.5" aria-hidden focusable="false"><path d={d} /></svg>
+  );
+}

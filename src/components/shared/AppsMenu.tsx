@@ -9,9 +9,9 @@ import { AppIcon } from './icons';
  * The Apps menu: the groups down the left, and the apps of the group you point at on the right (never all sixty at once).
  * It opens on the group you are in, with your app marked.
  */
-export function AppsMenu({ currentKey, currentSlug, onClose }: { currentKey?: GroupKey; currentSlug?: string; onClose: () => void }) {
+export function AppsMenu({ groupKey, currentKey, currentSlug, onClose }: { groupKey?: GroupKey; currentKey?: GroupKey; currentSlug?: string; onClose: () => void }) {
   const { groups } = useApps();
-  const [sel, setSel] = useState<GroupKey>(currentKey ?? groups[0]?.key ?? 'text');
+  const [sel, setSel] = useState<GroupKey>(groupKey ?? currentKey ?? groups[0]?.key ?? 'text');
   const g = groups.find((x) => x.key === sel) ?? groups[0];
   if (!g) return null;
   return (
@@ -20,7 +20,7 @@ export function AppsMenu({ currentKey, currentSlug, onClose }: { currentKey?: Gr
         {groups.map((x) => (
           <button
             key={x.key} type="button" role="tab" id={`am-t-${x.key}`} aria-selected={x.key === sel} aria-controls="am-panel" data-g={x.key}
-            className={`am-g${x.key === sel ? ' sel gtone' : ''}`} onMouseEnter={() => setSel(x.key)} onFocus={() => setSel(x.key)} onClick={() => setSel(x.key)}
+            className={`am-g${x.key === sel ? ' sel' : ''}`} onMouseEnter={() => setSel(x.key)} onFocus={() => setSel(x.key)} onClick={() => setSel(x.key)}
           >
             <i className="sq" aria-hidden /><span>{x.name}</span><small className="tx">{x.apps.length}</small>
           </button>

@@ -2,6 +2,7 @@ import Script from 'next/script';
 import type { Metadata, Viewport } from 'next';
 import './fonts.generated.css';
 import './globals.css';
+import './frame.css';
 import { EmbedBridge } from '@/components/shared/EmbedBridge';
 import { IconMotion } from '@/components/shared/IconMotion';
 import { RangeStyler } from '@/components/shared/RangeStyler';
@@ -24,7 +25,7 @@ const data = { index: searchIndex, groups: groupList };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" suppressHydrationWarning>
+    <html lang="en-GB" data-lead="cream" suppressHydrationWarning>
       <head>
         {/* Applies the saved choices (text size, loading screen, motion) before the first paint so the page never jumps. */}
         <script dangerouslySetInnerHTML={{ __html: PREFS_SCRIPT }} />

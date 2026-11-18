@@ -1,19 +1,18 @@
-import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 /**
- * The coloured band under the top bar that names the page: an optional picture, the title in big capitals, and one short line.
- * Give it a group (`g`) to take that group's colour, or a `tone` for the plain pages (Settings, Privacy).
+ * The title block at the top of a page: a plain paper field, the name in big capitals, one short line, and the halftone in the corner.
+ * Give it a picture (a glyph in a coloured tile) when the page has one.
  */
-export function Band({ title, line, icon, g, tone, back }: { title: string; line?: string; icon?: ReactNode; g?: string; tone?: 'ink' | 'gold' | 'cream'; back?: boolean }) {
+export function Band({ title, line, icon }: { title: string; line?: string; icon?: ReactNode; g?: string; tone?: 'ink' | 'gold' | 'cream'; back?: boolean }) {
   return (
-    <header className={`band${g ? ' gtone' : ''}${tone ? ` tone-${tone}` : ''}`} data-g={g}>
-      {back && <div className="wrap"><Link className="back" href="/"><i className="bk" aria-hidden />All tools</Link></div>}
-      <div className="wrap band-in">
-        {icon && <span className="band-ic" aria-hidden>{icon}</span>}
-        <div className="band-t">
+    <header className="tb">
+      <div className="ht ht-s" aria-hidden><i /><i /><i /></div>
+      <div className="wrap tb-in">
+        {icon && <span className="tb-ic" aria-hidden>{icon}</span>}
+        <div className="tb-t">
           <h1 className="d">{title}</h1>
-          {line && <p className="band-line tx">{line}</p>}
+          {line && <p className="tx">{line}</p>}
         </div>
       </div>
     </header>
