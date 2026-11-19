@@ -39,12 +39,13 @@ export function Shell({ children, data }: { children: React.ReactNode; data: App
     const onKey = (e: KeyboardEvent) => {
       const el = e.target as HTMLElement | null;
       const typing = /input|textarea|select/i.test(el?.tagName ?? '') || el?.isContentEditable;
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); window.dispatchEvent(new Event('pmc:search')); }
-      else if (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey) { e.preventDefault(); window.dispatchEvent(new Event('pmc:search')); }
+      const find = () => { if ((location.pathname.replace(/\/$/, '') || '/') === '/') window.dispatchEvent(new Event('pmc:search')); else router.push('/?find=1'); };
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); find(); }
+      else if (e.key === '/' && !typing && !e.metaKey && !e.ctrlKey && !e.altKey && (location.pathname.replace(/\/$/, '') || '/') === '/') { e.preventDefault(); find(); }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [router]);
 
   // The tab icon takes the colours of the group you are in, with your picture in the corner when you are signed in.
   useEffect(() => {
@@ -60,7 +61,7 @@ export function Shell({ children, data }: { children: React.ReactNode; data: App
     <AppsProvider value={data}>
       <div className="site">
         <a className="skip d" href="#main">Skip to the content</a>
-        {!bare && <SiteBar currentKey={currentKey} />}
+        {!bare && <SiteBar />}
         <main id="main" className="main" tabIndex={-1}>{children}</main>
         {!bare && <SiteFooter />}
       </div>

@@ -13,19 +13,19 @@ export function RecentTracker({ slug }: { slug: string }) {
 }
 
 /** The home page row of tools you opened lately. It stays out of the way until you have opened one. */
-export function RecentList({ apps }: { apps: { slug: string; title: string; href: string }[] }) {
+export function RecentList({ apps, max = 4 }: { apps: { slug: string; title: string; href: string; key: string }[]; max?: number }) {
   const [slugs, setSlugs] = useState<string[]>([]);
   useEffect(() => setSlugs(read()), []);
-  const list = slugs.map((s) => apps.find((a) => a.slug === s)).filter((a): a is NonNullable<typeof a> => !!a);
+  const list = slugs.map((s) => apps.find((a) => a.slug === s)).filter((a): a is NonNullable<typeof a> => !!a).slice(0, max);
   if (!list.length) return null;
   return (
-    <section className="recent" aria-labelledby="recent-title">
-      <h2 id="recent-title" className="cv-lab d">Recent</h2>
-      <ul className="recents">
+    <div className="fd-recent">
+      <p id="recent-title">Opened lately</p>
+      <ul aria-labelledby="recent-title">
         {list.map((a) => (
-          <li key={a.slug}><Link href={a.href} className="btn small"><span className="ic"><AppIcon slug={a.slug} size={24} still /></span>{a.title}</Link></li>
+          <li key={a.slug} data-g={a.key}><Link href={a.href}><span className="ic"><AppIcon slug={a.slug} size={22} still /></span>{a.title}</Link></li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 }

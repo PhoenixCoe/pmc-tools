@@ -24,7 +24,8 @@ export function IconMotion() {
         return { a, to: Math.floor(Number(a.currentTime) / d) * d, done: false };
       });
       if (!list.length) return;
-      list.forEach(({ a }) => { a.playbackRate = -2.4; a.play(); });
+      // An animation that repeats forever cannot be played backwards; settle that one straight on its finished picture.
+      list.forEach((o) => { try { o.a.playbackRate = -2.4; o.a.play(); } catch { o.a.pause(); o.a.currentTime = o.to; o.a.playbackRate = 1; o.done = true; } });
       const tick = () => {
         let left = 0;
         list.forEach((o) => {

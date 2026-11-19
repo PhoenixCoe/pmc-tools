@@ -1362,7 +1362,7 @@ html.intro.settle .hero-stage { opacity: 0; }
 
 /* ---- Opened inside another page (Coe): only the tool is shown. See lib/embed.ts. */
 html[data-embed] { --bar: 0px; }
-html[data-embed] .skip, html[data-embed] .topbar, html[data-embed] .foot, html[data-embed] .band,
+html[data-embed] .skip, html[data-embed] .topbar, html[data-embed] .gt, html[data-embed] .foot, html[data-embed] .band,
 html[data-embed] .body > .fn, html[data-embed] .body > .sec, html[data-embed] .body > .try { display: none !important; }
 html[data-embed] .bleed { height: 100dvh; min-height: 0; border-bottom: 0; }
 html[data-embed] .body { padding-top: 14px; padding-bottom: 14px; }

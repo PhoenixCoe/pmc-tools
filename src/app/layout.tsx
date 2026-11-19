@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import './fonts.generated.css';
 import './globals.css';
 import './frame.css';
+import './home.css';
 import { EmbedBridge } from '@/components/shared/EmbedBridge';
 import { IconMotion } from '@/components/shared/IconMotion';
 import { RangeStyler } from '@/components/shared/RangeStyler';

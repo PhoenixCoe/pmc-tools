@@ -214,15 +214,3 @@ html[data-embed] .tb, html[data-embed] .tt, html[data-embed] .faqs, html[data-em
 @media (prefers-reduced-motion: reduce) { .am, .mm, .as-drop { animation: none; } }
 html[data-motion='calm'] .am, html[data-motion='calm'] .mm { animation: none; }
 
-/* ---------- The top of every page: the logo and the account picture, nothing behind them ---------- */
-.topbar { position: static; z-index: 60; background: transparent; color: var(--ink); border: 0; height: auto; }
-.topbar :focus-visible { outline: 4px solid var(--g1); outline-offset: 4px; }
-.tbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 88px; padding-block: 16px 6px; }
-.tbar-logo { display: flex; align-items: center; gap: 14px; color: var(--ink); }
-.tbar-logo img { display: block; width: 52px; height: 52px; }
-.tbar-logo b { font: 400 2.2rem/1 var(--d); text-transform: uppercase; letter-spacing: 0.02em; }
-.tbar-logo:hover b { text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 6px; }
-.topbar .pa-btn, .topbar .pb-btn { width: 44px; height: 44px; border: 3px solid var(--ink); color: var(--ink); }
-.topbar .pa-btn { background: var(--pa-cbg, var(--gold)); color: var(--pa-cfg, var(--ink)); box-shadow: 3px 3px 0 var(--ink); }
-.topbar .pa-btn:hover, .topbar .pa-btn[aria-expanded=true] { box-shadow: 5px 5px 0 var(--ink); }
-@media (max-width: 800px) { .tbar { min-height: 70px; padding-block: 12px 4px; } .tbar-logo img { width: 42px; height: 42px; } .tbar-logo b { font-size: 1.8rem; } .topbar .pa-btn { width: 40px; height: 40px; } }
