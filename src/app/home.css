@@ -18,6 +18,7 @@
 .gt .pa-btn { width: 40px; height: 40px; margin: 0; border: 3px solid var(--paper); background: var(--pa-cbg, #B49A57); color: var(--pa-cfg, var(--ink)); }
 .gt .tb-help:hover, .gt .pb-btn:hover, .gt .pa-btn:hover, .gt .pb-btn[aria-expanded=true], .gt .pa-btn[aria-expanded=true], .gt .tb-help[aria-expanded=true] { background: transparent; color: var(--paper); box-shadow: 3px 3px 0 var(--g1); transform: translate(-2px, -2px); }
 .gt .pa-btn:hover, .gt .pa-btn[aria-expanded=true] { background: var(--pa-cbg, #B49A57); color: var(--pa-cfg, var(--ink)); }
+.gt .pa-btn.pa-on { background: var(--ink) !important; color: var(--paper); }
 .gt .tb-help:focus-visible, .gt .pb-btn:focus-visible, .gt .pa-btn:focus-visible { box-shadow: 4px 4px 0 var(--g1); }
 .gt .tb-help:active, .gt .pb-btn:active, .gt .pa-btn:active { box-shadow: 0 0 0 var(--g1); transform: translate(1px, 1px); transition-duration: 0.04s; }
 .gt .tb-help, .gt .pb-btn, .gt .pa-btn { transition: transform 0.14s var(--x), box-shadow 0.14s var(--x), background-color 0.14s var(--x), color 0.14s var(--x); }

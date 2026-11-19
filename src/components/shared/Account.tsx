@@ -37,7 +37,8 @@ export function AccountMenu({ user, signOut }: { user: Account; signOut: () => v
     const go = () => {
       const w = window as unknown as { PmcAccount?: PmcAcct };
       if (!w.PmcAccount || !btn.current) return false;
-      w.PmcAccount.mount(btn.current, () => ({
+      // Mount once. The menu reads who is signed in each time it opens, so a second mount would only add a second click that shuts it again.
+      if (!btn.current.classList.contains('pa-btn')) w.PmcAccount.mount(btn.current, () => ({
         user: { name: live.current.user.name, email: live.current.user.email, img: live.current.user.image },
         manage: `${ACCOUNTS}/info/?from=tools`, addAccount: `${ACCOUNTS}/add/?from=tools`,
         onSignOut: () => live.current.signOut(),
