@@ -23,9 +23,19 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      - name: Say whether PMC ID sign in is switched on
+        env:
+          SB_URL: ${{ vars.SUPABASE_URL || secrets.SUPABASE_URL }}
+          SB_KEY: ${{ vars.SUPABASE_ANON_KEY || secrets.SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SB_URL" ] || [ -z "$SB_KEY" ]; then
+            echo "::warning title=PMC ID sign in is OFF::This build has no SUPABASE_URL or no SUPABASE_ANON_KEY, so Sign in cannot work. Add both on THIS repo under Settings > Secrets and variables > Actions > Variables, then run this workflow again."
+          else
+            echo "PMC ID sign in is ON for this build."
+          fi
       - name: Make sure no secret key is going on the website
         env:
-          SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+          SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY || secrets.SUPABASE_ANON_KEY }}
         run: |
           python3 - <<'PY'
           import base64, json, os, sys
@@ -46,8 +56,8 @@ jobs:
       - run: npm run build:static
         env:
           SITE_URL: https://tools.pmcstudios.uk
-          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ vars.SUPABASE_URL || secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.SUPABASE_ANON_KEY || secrets.SUPABASE_ANON_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
