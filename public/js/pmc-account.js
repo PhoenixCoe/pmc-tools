@@ -38,7 +38,7 @@
     '.pa-look-flat.pa-pop,.pa-look-round.pa-pop{box-shadow:0 10px 30px rgba(0,0,0,.16)}',
     '@keyframes pa-up{from{transform:translateY(10px);opacity:0}}',
     '.pa-in{padding:10px}',
-    '.dpfp{width:62%;height:62%;display:block}.pa-av .dpfp{stroke-width:2}.pa-h{font-family:var(--pa-head);text-transform:var(--pa-case);font-weight:400;letter-spacing:.03em;line-height:.95}',
+    '.dpfp{width:62%;height:62%;width:round(down,62%,2px);height:round(down,62%,2px);display:block}.pa-av .dpfp{stroke-width:2}.pa-h{font-family:var(--pa-head);text-transform:var(--pa-case);font-weight:400;letter-spacing:.03em;line-height:.95}',
     '.pa-card{position:relative;overflow:hidden;display:flex;align-items:center;gap:14px;padding:18px 14px;border:var(--pa-frame) solid var(--pa-ink);border-radius:var(--pa-radius);background:var(--pa-cbg,var(--pa-paper));color:var(--pa-cfg,var(--pa-ink));transition:background .2s,color .2s}',
     '.pa-card>*{position:relative;z-index:1}',
     '.pa-dots{position:absolute!important;z-index:0!important;inset:0;color:var(--pa-c);pointer-events:none}',
@@ -108,7 +108,7 @@
   }
   function paint(el, src) { return dominant(src).then(function (h) { var t = tone(h); el.style.setProperty('--pa-cbg', t.bg); el.style.setProperty('--pa-cfg', t.fg); el.style.setProperty('--pa-c', t.dots); return t; }); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return '&#' + c.charCodeAt(0) + ';'; }); }
-  function letter() { return '<svg class="dpfp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="miter" aria-hidden="true"><rect x="8" y="3" width="8" height="8"/><path d="M3 21v-6h18v6"/></svg>'; }
+  function letter() { return '<svg class="dpfp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="miter" stroke-linecap="square" aria-hidden="true"><rect x="8" y="3" width="8" height="8"/><path d="M3 21v-6h18v6"/></svg>'; }
   function avatar(u) { return '<span class="pa-av">' + (u.img ? '<img alt="" src="' + esc(u.img) + '">' : letter(u)) + '</span>'; }
   function dots() { return '<span class="pa-dots" aria-hidden="true"><i></i><i></i><i></i></span>'; }
 
