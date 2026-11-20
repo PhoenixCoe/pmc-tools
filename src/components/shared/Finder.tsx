@@ -80,7 +80,7 @@ export function Finder({ groups }: { groups: GroupEntry[] }) {
             {list.map((a, i) => (
               <li key={a.slug} data-g={a.key}>
                 <Link href={a.href} className="fd-tile">
-                  <span className="fd-ic"><AppIcon slug={a.slug} size={58} still /></span>
+                  <span className="fd-ic"><AppIcon slug={a.slug} size={62} still /></span>
                   <span className="fd-t"><b>{a.title}</b><small className="tx">{a.tagline}</small></span>
                   {typed && i === 0 ? <kbd className="fd-enter" aria-hidden>Enter</kbd> : null}
                 </Link>
